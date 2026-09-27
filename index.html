@@ -6,7 +6,7 @@
 
   <title>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal</title>
   <meta name="title" content="𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal">
-  <meta name="description" content="Official Portal of Eclipse Community owned by Ayush Sahu. Free Fire MAX, Roblox Blox Fruits, GTA V Online, Minecraft SMP & aesthetic midnight shayari.">
+  <meta name="description" content="Official Portal of Eclipse Community owned by Ayush Sahu. Free Fire MAX, Roblox, GTA V, Minecraft SMP & aesthetic shayari.">
   <meta name="author" content="Ayush Sahu">
 
   <meta property="og:type" content="website">
@@ -27,8 +27,8 @@
       --accent: #00f0ff;
       --discord: #5865F2;
       --bg: #030107;
-      --panel: rgba(15, 8, 26, 0.85);
-      --border: rgba(255, 42, 133, 0.25);
+      --panel: rgba(16, 8, 28, 0.88);
+      --border: rgba(255, 42, 133, 0.22);
     }
 
     * {
@@ -44,83 +44,78 @@
       color: #ffffff;
       min-height: 100vh;
       overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    #ambient-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    .viewport-container {
       width: 100%;
-      max-width: 650px;
-      padding: 14px 14px 60px;
+      padding: 0 0 60px 0;
+    }
+
+    /* फुल-स्क्रीन कंटेनर - कोई खाली साइड नहीं */
+    .portal-container {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px 12px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      .portal-container {
+        max-width: 900px;
+        padding: 20px 24px;
+      }
     }
 
     /* टॉप हेडर */
     header {
       width: 100%;
-      padding: 12px 20px;
-      margin-bottom: 18px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(18, 9, 32, 0.65);
+      background: rgba(18, 9, 32, 0.7);
       backdrop-filter: blur(25px);
-      border-radius: 20px;
+      border-radius: 16px;
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .brand-title {
       font-family: 'Playfair Display', serif;
-      font-size: 20px;
+      font-size: 21px;
       font-style: italic;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       background: linear-gradient(120deg, #ffffff, #ffb3d9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 800;
     }
 
-    .nav-cta {
-      padding: 8px 18px;
+    .header-btn {
+      padding: 7px 16px;
       background: linear-gradient(135deg, var(--discord), var(--primary));
       color: #fff;
       text-decoration: none;
       font-size: 12px;
       font-weight: 800;
-      border-radius: 18px;
-      box-shadow: 0 0 15px rgba(88, 101, 242, 0.4);
+      border-radius: 16px;
     }
 
-    /* मुख्य हीरो कार्ड */
+    /* मुख्य कार्ड - फुल स्क्रीन विड्थ */
     .hero-card {
       width: 100%;
       background: var(--panel);
-      border-radius: 28px;
+      border-radius: 24px;
       border: 1px solid var(--border);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(30px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
       overflow: hidden;
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 18px;
     }
 
+    /* बैनर को पर्याप्त ऊँचाई दी गई ताकि लोगो ऊपर न चढ़े */
     .banner-container {
       width: 100%;
-      height: 185px;
+      height: 200px;
       position: relative;
       background: #000;
-      overflow: hidden;
     }
 
     .banner-container img {
@@ -135,19 +130,22 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, rgba(15, 8, 26, 1) 0%, rgba(15, 8, 26, 0.2) 60%, transparent 100%);
+      height: 60%;
+      background: linear-gradient(to top, rgba(16, 8, 28, 1) 0%, transparent 100%);
     }
 
+    /* लोगो - बैनर के नीचे सही संतुलन में */
     .avatar-wrapper {
-      margin-top: -55px;
-      margin-bottom: 12px;
+      margin-top: -45px;
+      margin-bottom: 10px;
       display: inline-block;
+      position: relative;
+      z-index: 2;
     }
 
     .avatar-glow-ring {
-      width: 98px;
-      height: 98px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       padding: 3px;
       background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
@@ -162,16 +160,16 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      background: #11071c;
+      background: #000;
     }
 
     .hero-content {
-      padding: 0 20px 25px;
+      padding: 0 16px 20px;
     }
 
     .server-name {
       font-family: 'Playfair Display', serif;
-      font-size: 34px;
+      font-size: 32px;
       font-style: italic;
       letter-spacing: 1.5px;
       background: linear-gradient(120deg, #ffffff, #ffb3d9, #e0aaff);
@@ -184,20 +182,20 @@
     .server-tagline {
       font-size: 13px;
       color: #a797be;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .stats-pill {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       background: rgba(255, 255, 255, 0.04);
       padding: 6px 18px;
       border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .live-dot {
@@ -207,7 +205,7 @@
       border-radius: 50%;
       box-shadow: 0 0 8px #23a55a;
       display: inline-block;
-      margin-right: 5px;
+      margin-right: 4px;
     }
 
     .join-btn-master {
@@ -216,20 +214,15 @@
       justify-content: center;
       gap: 10px;
       width: 100%;
-      padding: 16px 20px;
+      padding: 16px;
       background: linear-gradient(135deg, var(--discord), var(--primary));
-      border-radius: 18px;
+      border-radius: 16px;
       color: #ffffff;
       text-decoration: none;
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 800;
       letter-spacing: 0.8px;
-      box-shadow: 0 10px 30px rgba(88, 101, 242, 0.5), 0 0 20px rgba(255, 42, 133, 0.35);
-      transition: all 0.2s ease;
-    }
-
-    .join-btn-master:hover {
-      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(88, 101, 242, 0.5);
     }
 
     .join-btn-master svg {
@@ -238,41 +231,34 @@
       fill: #ffffff;
     }
 
-    /* सेक्शन टाइटल्स */
+    /* गेमिंग सेक्शन ग्रिड */
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 21px;
+      font-size: 19px;
       font-style: italic;
       color: #ffb6c1;
       text-align: center;
-      margin-bottom: 14px;
+      margin: 18px 0 12px;
       letter-spacing: 1px;
     }
 
-    /* गेमिंग सेक्शन ग्रिड */
     .gaming-grid {
+      width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 25px;
+      margin-bottom: 18px;
     }
 
     .game-card {
       background: var(--panel);
       border: 1px solid rgba(255, 42, 133, 0.2);
-      border-radius: 18px;
-      padding: 14px 12px;
+      border-radius: 16px;
+      padding: 12px;
       text-decoration: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.2s ease;
-    }
-
-    .game-card:hover {
-      background: rgba(255, 42, 133, 0.08);
-      border-color: rgba(255, 42, 133, 0.5);
-      transform: translateY(-2px);
     }
 
     .game-top-bar {
@@ -283,8 +269,8 @@
     }
 
     .game-svg-frame {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -300,7 +286,7 @@
     }
 
     .game-title {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 800;
       color: #ffffff;
       margin-bottom: 2px;
@@ -312,28 +298,29 @@
       line-height: 1.3;
     }
 
-    /* DISCADIA STYLE MEMBER AVATAR BUBBLE CARD */
+    /* DISCADIA STYLE MEMBER AVATAR BUBBLE CARD - FULL WIDTH */
     .discadia-members-card {
+      width: 100%;
       background: var(--panel);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 22px;
-      padding: 20px 18px;
-      margin-bottom: 20px;
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 14px;
       text-align: left;
     }
 
     .member-count-big {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: #ffffff;
       line-height: 1.1;
     }
 
     .member-status-sub {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #23a55a;
       font-weight: 600;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -343,35 +330,23 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      max-height: 110px;
-      overflow-y: auto;
-      padding-top: 4px;
-    }
-
-    .avatar-bubble-row::-webkit-scrollbar {
-      width: 3px;
-    }
-    .avatar-bubble-row::-webkit-scrollbar-thumb {
-      background: rgba(255, 42, 133, 0.4);
-      border-radius: 3px;
+      width: 100%;
     }
 
     .member-bubble {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      background: #5865F2;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .member-bubble svg {
-      width: 17px;
-      height: 17px;
+      width: 16px;
+      height: 16px;
       fill: #ffffff;
     }
 
@@ -379,90 +354,90 @@
       position: absolute;
       bottom: -1px;
       right: -1px;
-      width: 7.5px;
-      height: 7.5px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: #23a55a;
-      border: 1.5px solid #0b0512;
+      border: 1.5px solid #000;
     }
 
-    /* READ MORE BUTTON & EXPANDABLE DETAILS */
-    .read-more-trigger {
+    /* 100% वर्किंग इन-बिल्ट HTML डिटेल्स / रीड मोर */
+    details.story-accordion {
+      width: 100%;
+      margin-bottom: 16px;
+      background: var(--panel);
+      border: 1px solid rgba(255, 42, 133, 0.3);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    summary.story-header {
+      padding: 15px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #ffb3d9;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-      padding: 15px 18px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 42, 133, 0.35);
-      border-radius: 18px;
-      color: #ffb3d9;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-bottom: 22px;
-      transition: all 0.25s ease;
+      list-style: none;
+      user-select: none;
     }
 
-    .read-more-trigger:hover {
-      background: rgba(255, 42, 133, 0.1);
-      border-color: var(--primary);
-    }
-
-    /* इन-पेज एक्सपेंडेबल डिटेल्स बॉक्स */
-    #details-section {
+    summary.story-header::-webkit-details-marker {
       display: none;
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 22px;
-      padding: 22px 18px;
-      margin-bottom: 24px;
+    }
+
+    summary.story-header::after {
+      content: "▼";
+      font-size: 11px;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] summary.story-header::after {
+      transform: rotate(180deg);
+    }
+
+    .story-content {
+      padding: 0 16px 20px;
       text-align: left;
-      line-height: 1.6;
-    }
-
-    #details-section.open {
-      display: block;
-      animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .doc-badge {
       display: inline-block;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #ffd700;
       background: rgba(255, 215, 0, 0.1);
       border: 1px solid rgba(255, 215, 0, 0.3);
       padding: 4px 10px;
-      border-radius: 12px;
-      margin-bottom: 12px;
+      border-radius: 10px;
+      margin: 14px 0 10px;
     }
 
     .doc-quote {
       font-style: italic;
       color: #e0aaff;
       border-left: 2px solid var(--primary);
-      padding-left: 10px;
-      margin-bottom: 14px;
-      font-size: 13px;
-    }
-
-    .doc-h2 {
-      font-size: 15.5px;
-      font-weight: 800;
-      color: #ffffff;
-      margin: 18px 0 8px;
+      padding-left: 8px;
+      margin-bottom: 12px;
+      font-size: 12.5px;
     }
 
     .doc-p {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #b3a5c7;
+      line-height: 1.6;
       margin-bottom: 12px;
+    }
+
+    .doc-h2 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 14px 0 6px;
     }
 
     .doc-ul {
@@ -470,11 +445,11 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .doc-ul li {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #b3a5c7;
       line-height: 1.45;
     }
@@ -486,28 +461,28 @@
     .tag-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 16px;
+      gap: 5px;
+      margin-top: 12px;
     }
 
     .hash-tag {
-      font-size: 11px;
+      font-size: 10.5px;
       color: #8c7e9f;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 4px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 3px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .owner-signature {
       width: 100%;
-      padding: 14px 16px;
+      padding: 12px;
       text-align: center;
       background: rgba(255, 215, 0, 0.03);
       border: 1px solid rgba(255, 215, 0, 0.25);
-      border-radius: 18px;
-      margin-bottom: 22px;
-      font-size: 13px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      font-size: 12.5px;
       color: #ffd700;
       font-weight: 700;
     }
@@ -521,17 +496,15 @@
 </head>
 <body>
 
-  <canvas id="ambient-canvas"></canvas>
+  <div class="portal-container">
 
-  <div class="viewport-container">
-
-    <!-- टॉप हेडर -->
+    <!-- हेडर -->
     <header>
       <div class="brand-title">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
-      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="nav-cta audio-engine">JOIN SERVER</a>
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="header-btn">JOIN SERVER</a>
     </header>
 
-    <!-- मुख्य सर्वर कार्ड -->
+    <!-- मुख्य सर्वर हीरो कार्ड -->
     <div class="hero-card">
       <div class="banner-container">
         <img src="banner.gif" alt="Eclipse Banner" onerror="this.src='banner.jpg'">
@@ -549,12 +522,12 @@
         <p class="server-tagline">active chat . gaming squads . midnight shayari</p>
 
         <div class="stats-pill">
-          <div><span class="live-dot"></span> 41 Members Active</div>
+          <div><span class="live-dot"></span> 41 Active</div>
           <div style="color: rgba(255,255,255,0.2);">•</div>
-          <div>👥 131 Guild Members</div>
+          <div>👥 131 Members</div>
         </div>
 
-        <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="join-btn-master audio-engine">
+        <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="join-btn-master">
           <svg viewBox="0 0 127.14 96.36">
             <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.12,53,91.08,65.69,84.69,65.69Z"/>
           </svg>
@@ -563,14 +536,14 @@
       </div>
     </div>
 
-    <!-- 1. गेमिंग स्क्वाड सेक्शन -->
+    <!-- गेमिंग स्क्वाड सेक्शन -->
     <h2 class="section-title">🎮 . 𝐺𝐴𝑀𝐼𝑁𝐺 𝑆𝑄𝑈𝐴𝐷𝑆 . 🎮</h2>
     <div class="gaming-grid">
       <!-- Free Fire -->
-      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="34" height="34">
+            <svg viewBox="0 0 100 100" width="32" height="32">
               <path d="M50 5 L88 22 L82 72 L50 95 L18 72 L12 22 Z" fill="#ff7a00" stroke="#ffd700" stroke-width="3"/>
               <path d="M50 15 L78 30 L50 78 L22 30 Z" fill="#11071c"/>
               <text x="50" y="55" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="900" text-anchor="middle">FF</text>
@@ -585,10 +558,10 @@
       </a>
 
       <!-- Roblox -->
-      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="30" height="30">
+            <svg viewBox="0 0 100 100" width="28" height="28">
               <rect x="20" y="20" width="60" height="60" rx="12" transform="rotate(-15 50 50)" fill="#ffffff"/>
               <rect x="38" y="38" width="24" height="24" rx="4" transform="rotate(-15 50 50)" fill="#0d0614"/>
             </svg>
@@ -602,10 +575,10 @@
       </a>
 
       <!-- GTA V -->
-      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="34" height="34">
+            <svg viewBox="0 0 100 100" width="32" height="32">
               <path d="M22 15 L42 85 L58 85 L78 15 L62 15 L50 68 L38 15 Z" fill="#2d882d" stroke="#ffffff" stroke-width="2"/>
               <rect x="15" y="46" width="70" height="15" rx="3" fill="#ffffff"/>
               <text x="50" y="58" fill="#1b5e20" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="1">FIVE</text>
@@ -620,10 +593,10 @@
       </a>
 
       <!-- Minecraft -->
-      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="34" height="34">
+            <svg viewBox="0 0 100 100" width="32" height="32">
               <polygon points="50,10 88,32 50,54 12,32" fill="#5b8731"/>
               <polygon points="12,32 50,54 50,92 12,70" fill="#866043"/>
               <polygon points="50,54 88,32 88,70 50,92" fill="#573d26"/>
@@ -638,37 +611,97 @@
       </a>
     </div>
 
-    <!-- 2. DISCADIA STYLE MEMBER AVATAR BUBBLE CARD -->
+    <!-- 131 MEMBERS DISCADIA BUBBLES - FULL WIDTH -->
     <div class="discadia-members-card">
       <div class="member-count-big">131</div>
       <div class="member-status-sub">
         <span class="live-dot"></span> 41 members online • Active Guild Roster
       </div>
 
-      <!-- रंगीन डिस्कोर्ड अवतार बबल्स की कतार -->
-      <div class="avatar-bubble-row" id="bubble-container"></div>
+      <div class="avatar-bubble-row">
+        <!-- 40+ डायरेक्ट HTML बबल्स - जीरो लोडिंग एरर -->
+        <div class="member-bubble" style="background:#5865F2"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#ff2a85"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#00f0ff"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#8a2be2"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#23a55a"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#ffd700"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#eb459e"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#f57731"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#5865F2"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#00f0ff"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#ff2a85"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#8a2be2"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#ffd700"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#23a55a"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#5865F2"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#f57731"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#00f0ff"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+        <div class="member-bubble" style="background:#ff2a85"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="bubble-dot"></span></div>
+      </div>
     </div>
 
-    <!-- 3. READ MORE BUTTON -->
-    <button class="read-more-trigger audio-engine" id="toggle-doc-btn">
-      <span>📖 Read Server Story & Rules</span>
-      <span id="arrow-icon">▼</span>
-    </button>
+    <!-- 100% वर्किंग रीड मोर (HTML DETAILS TAG - कभी फेल नहीं होता) -->
+    <details class="story-accordion">
+      <summary class="story-header">
+        <span>📖 Read Server Story & Rules</span>
+      </summary>
+      <div class="story-content">
+        <div class="doc-badge">🌸 𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
+        
+        <div class="doc-quote">
+          “𝑁𝑜𝑡 𝑗𝑢𝑠𝑡 𝑎𝑛𝑜𝑡ℎ𝑒𝑟 𝑐𝑟𝑜𝑤𝑑𝑒𝑑 𝑠𝑒𝑟𝑣𝑒𝑟, 𝑏𝑢𝑡 𝑎 𝑟𝑒𝑎𝑙 𝑓𝑎𝑚𝑖𝑙𝑦 𝑤ℎ𝑒𝑟𝑒 𝑒𝑣𝑒𝑟𝑦 𝑠𝑜𝑢𝑙 ℎ𝑎𝑠 𝑎 𝑣𝑜𝑖𝑐𝑒.”
+        </div>
 
-    <!-- 4. इन-पेज एक्सपेंडेबल डिटेल्स बॉक्स (Italian Style Writing) -->
-    <div id="details-section">
-      <div class="doc-badge">🌸 𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
-      
-      <div class="doc-quote">
-        “𝑁𝑜𝑡 𝑗𝑢𝑠𝑡 𝑎𝑛𝑜𝑡ℎ𝑒𝑟 𝑐𝑟𝑜𝑤𝑑𝑒𝑑 𝑠𝑒𝑟𝑣𝑒𝑟, 𝑏𝑢𝑡 𝑎 𝑟𝑒𝑎𝑙 𝑓𝑎𝑚𝑖𝑙𝑦 𝑤ℎ𝑒𝑟𝑒 𝑒𝑣𝑒𝑟𝑦 𝑠𝑜𝑢𝑙 ℎ𝑎𝑠 𝑎 𝑣𝑜𝑖𝑐𝑒.”
+        <p class="doc-p">
+          𝐿𝑜𝑜𝑘𝑖𝑛𝑔 𝑓𝑜𝑟 𝑎 𝑠𝑎𝑓𝑒 ℎ𝑎𝑣𝑒𝑛 𝑎𝑤𝑎𝑦 𝑓𝑟𝑜𝑚 𝑎𝑙𝑙 𝑡ℎ𝑒 𝑓𝑎𝑘𝑒 𝑒𝑛𝑒𝑟𝑔𝑦 𝑎𝑛𝑑 𝑡𝑜𝑥𝑖𝑐 𝑐𝑟𝑜𝑤𝑑𝑠? 𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 <b>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒</b>—𝑎𝑛 𝑎𝑒𝑠𝑡ℎ𝑒𝑡𝑖𝑐 ℎ𝑜𝑚𝑒 𝑏𝑢𝑖𝑙𝑡 𝑓𝑜𝑟 𝑛𝑖𝑔ℎ𝑡 𝑜𝑤𝑙𝑠, 𝑝𝑎𝑠𝑠𝑖𝑜𝑛𝑎𝑡𝑒 𝑔𝑎𝑚𝑒𝑟𝑠, 𝑎𝑛𝑑 𝑑𝑒𝑒𝑝 𝑡ℎ𝑖𝑛𝑘𝑒𝑟𝑠. 𝑊𝑖𝑡ℎ 𝑎 𝑡𝑖𝑔ℎ𝑡𝑙𝑦-𝑘𝑛𝑖𝑡 𝑐𝑟𝑒𝑤 𝑜𝑓 <b>130+ 𝑔𝑒𝑛𝑢𝑖𝑛𝑒 𝑚𝑒𝑚𝑏𝑒𝑟𝑠</b>, 𝑛𝑜 𝑜𝑛𝑒 𝑠𝑡𝑎𝑦𝑠 𝑎 𝑠𝑡𝑟𝑎𝑛𝑔𝑒𝑟 ℎ𝑒𝑟𝑒 𝑓𝑜𝑟 𝑙𝑜𝑛𝑔.
+        </p>
+
+        <div class="doc-h2">✨ 𝑊ℎ𝑎𝑡 𝑊𝑒 𝑂𝑓𝑓𝑒𝑟</div>
+        <ul class="doc-ul">
+          <li>🔥 <b>𝐷𝑎𝑖𝑙𝑦 𝑅𝑎𝑛𝑘𝑒𝑑 𝐺𝑟𝑖𝑛𝑑𝑠:</b> 𝐴𝑐𝑡𝑖𝑣𝑒 𝑠𝑞𝑢𝑎𝑑𝑠 𝑓𝑜𝑟 𝐹𝑟𝑒𝑒 𝐹𝑖𝑟𝑒 𝐶𝑆 𝑟𝑎𝑛𝑘 𝑝𝑢𝑠ℎ, 𝑐𝑢𝑠𝑡𝑜𝑚 4𝑣4 𝑠ℎ𝑜𝑤𝑑𝑜𝑤𝑛𝑠, 𝑎𝑛𝑑 𝑠𝑒𝑟𝑖𝑜𝑢𝑠 𝑡𝑜𝑢𝑟𝑛𝑎𝑚𝑒𝑛𝑡 𝑣𝑖𝑏𝑒𝑠.</li>
+          <li>⚡ <b>𝑅𝑜𝑏𝑙𝑜𝑥 & 𝐵𝑙𝑜𝑥 𝐹𝑟𝑢𝑖𝑡𝑠:</b> 𝐹𝑟𝑢𝑖𝑡 𝑡𝑟𝑎𝑑𝑖𝑛𝑔, 𝑃𝑣𝑃 𝑏𝑜𝑢𝑛𝑡𝑦 ℎ𝑢𝑛𝑡𝑖𝑛𝑔, 𝑐𝑜𝑚𝑏𝑜 𝑡𝑒𝑠𝑡𝑖𝑛𝑔, 𝑎𝑛𝑑 𝑝𝑟𝑖𝑣𝑎𝑡𝑒 𝑠𝑒𝑟𝑣𝑒𝑟 𝑐ℎ𝑖𝑙𝑙𝑖𝑛𝑔.</li>
+          <li>🚗 <b>𝐺𝑇𝐴 𝑉 & 𝑀𝑖𝑛𝑒𝑐𝑟𝑎𝑓𝑡 𝑆𝑀𝑃:</b> 𝐿𝑎𝑡𝑒-𝑛𝑖𝑔ℎ𝑡 𝐿𝑜𝑠 𝑆𝑎𝑛𝑡𝑜𝑠 ℎ𝑒𝑖𝑠𝑡 𝑐𝑟𝑒𝑤𝑠 𝑎𝑛𝑑 𝑐ℎ𝑖𝑙𝑙 𝑚𝑢𝑙𝑡𝑖𝑝𝑙𝑎𝑦𝑒𝑟 𝑠𝑢𝑟𝑣𝑖𝑣𝑎𝑙 𝑤𝑜𝑟𝑙𝑑𝑠.</li>
+          <li>🖤 <b>𝑀𝑖𝑑𝑛𝑖𝑔ℎ𝑡 𝑆ℎ𝑎𝑦𝑎𝑟𝑖 & 𝑅𝑎𝑤 𝑃𝑜𝑒𝑡𝑟𝑦:</b> 𝐷𝑒𝑑𝑖𝑐𝑎𝑡𝑒𝑑 𝑐ℎ𝑎𝑛𝑛𝑒𝑙𝑠 𝑡𝑜 𝑏𝑙𝑒𝑒𝑑 𝑦𝑜𝑢𝑟 ℎ𝑒𝑎𝑟𝑡 𝑜𝑢𝑡, 𝑠ℎ𝑎𝑟𝑒 𝑟𝑒𝑎𝑙 𝑡ℎ𝑜𝑢𝑔ℎ𝑡𝑠, ℎ𝑒𝑎𝑟𝑡𝑏𝑟𝑒𝑎𝑘 𝑣𝑒𝑟𝑠𝑒𝑠, 𝑎𝑛𝑑 𝑒𝑚𝑜𝑡𝑖𝑜𝑛𝑎𝑙 𝑙𝑖𝑛𝑒𝑠.</li>
+          <li>🎧 <b>𝐴𝑐𝑜𝑢𝑠𝑡𝑖𝑐 & 𝐿𝑜𝑓𝑖 𝐿𝑜𝑢𝑛𝑔𝑒𝑠:</b> 24/7 𝑐𝑟𝑦𝑠𝑡𝑎𝑙-𝑐𝑙𝑒𝑎𝑟 𝑣𝑜𝑖𝑐𝑒 𝑐ℎ𝑎𝑛𝑛𝑒𝑙𝑠 𝑤𝑖𝑡ℎ 𝑝𝑟𝑒𝑚𝑖𝑢𝑚 𝑏𝑜𝑡𝑠, 𝑤ℎ𝑒𝑡ℎ𝑒𝑟 𝑦𝑜𝑢 𝑛𝑒𝑒𝑑 𝑡𝑜 𝑗𝑎𝑚, 𝑔𝑟𝑖𝑛𝑑, 𝑜𝑟 𝑗𝑢𝑠𝑡 𝑐ℎ𝑖𝑙𝑙 𝑞𝑢𝑖𝑒𝑡𝑙𝑦.</li>
+          <li>🎀 <b>𝐴𝑒𝑠𝑡ℎ𝑒𝑡𝑖𝑐 𝑃𝐹𝑃𝑠 & 𝐸𝑚𝑜𝑡𝑒𝑠:</b> 𝐶𝑙𝑒𝑎𝑛 𝑎𝑛𝑖𝑚𝑒 𝑏𝑎𝑛𝑛𝑒𝑟𝑠, 𝑚𝑎𝑡𝑐ℎ𝑖𝑛𝑔 𝑝𝑟𝑜𝑓𝑖𝑙𝑒 𝑖𝑐𝑜𝑛𝑠, 𝑎𝑛𝑑 𝑐𝑢𝑠𝑡𝑜𝑚 𝐸𝑐𝑙𝑖𝑝𝑠𝑒 𝑠𝑡𝑖𝑐𝑘𝑒𝑟𝑠.</li>
+          <li>💎 <b>𝐴𝑐𝑡𝑖𝑣𝑖𝑡𝑦 𝑅𝑒𝑤𝑎𝑟𝑑𝑠:</b> 𝐿𝑒𝑣𝑒𝑙 𝑢𝑝 𝑎𝑢𝑡𝑜𝑚𝑎𝑡𝑖𝑐𝑎𝑙𝑙𝑦 𝑗𝑢𝑠𝑡 𝑏𝑦 𝑐ℎ𝑎𝑡𝑡𝑖𝑛𝑔 𝑎𝑛𝑑 𝑢𝑛𝑙𝑜𝑐𝑘 𝑒𝑥𝑐𝑙𝑢𝑠𝑖𝑣𝑒 𝑉𝐼𝑃 𝑝𝑒𝑟𝑘𝑠 𝑎𝑛𝑑 𝑏𝑎𝑑𝑔𝑒𝑠.</li>
+        </ul>
+
+        <div class="doc-h2">🛡️ 𝐶𝑜𝑚𝑚𝑢𝑛𝑖𝑡𝑦 𝐺𝑢𝑖𝑑𝑒𝑙𝑖𝑛𝑒𝑠</div>
+        <ul class="doc-ul">
+          <li>✦ <b>𝑅𝑒𝑠𝑝𝑒𝑐𝑡 𝐴𝑏𝑜𝑣𝑒 𝐴𝑙𝑙:</b> 𝑍𝑒𝑟𝑜-𝑡𝑜𝑙𝑒𝑟𝑎𝑛𝑐𝑒 𝑝𝑜𝑙𝑖𝑐𝑦 𝑓𝑜𝑟 𝑑𝑖𝑠𝑟𝑒𝑠𝑝𝑒𝑐𝑡, 𝑡𝑜𝑥𝑖𝑐𝑖𝑡𝑦, ℎ𝑎𝑡𝑒 𝑠𝑝𝑒𝑒𝑐ℎ, 𝑜𝑟 𝑢𝑛𝑛𝑒𝑐𝑒𝑠𝑠𝑎𝑟𝑦 𝑑𝑟𝑎𝑚𝑎.</li>
+          <li>✦ <b>𝑆𝑎𝑓𝑒 & 𝑃𝑒𝑎𝑐𝑒𝑓𝑢𝑙:</b> 𝑁𝑜 𝑐𝑟𝑒𝑒𝑝𝑦 𝐷𝑀𝑠, 𝑛𝑜 𝑢𝑛𝑠𝑜𝑙𝑖𝑐𝑖𝑡𝑒𝑑 𝑎𝑑𝑣𝑒𝑟𝑡𝑖𝑠𝑖𝑛𝑔, 𝑎𝑛𝑑 𝑛𝑜 𝑠𝑝𝑎𝑚𝑚𝑖𝑛𝑔.</li>
+          <li>✦ <b>𝐾𝑒𝑒𝑝 𝑡ℎ𝑒 𝑉𝑖𝑏𝑒𝑠 𝐶𝑙𝑒𝑎𝑛:</b> 𝑈𝑠𝑒 𝑡ℎ𝑒 𝑑𝑒𝑠𝑖𝑔𝑛𝑎𝑡𝑒𝑑 𝑐ℎ𝑎𝑛𝑛𝑒𝑙𝑠 𝑓𝑜𝑟 𝑔𝑎𝑚𝑖𝑛𝑔, 𝑚𝑢𝑠𝑖𝑐, 𝑎𝑛𝑑 𝑝𝑜𝑒𝑡𝑟𝑦.</li>
+        </ul>
+
+        <div class="doc-h2">👑 𝑇ℎ𝑒 𝑉𝑖𝑠𝑖𝑜𝑛</div>
+        <p class="doc-p">
+          <b>𝐹𝑜𝑢𝑛𝑑𝑒𝑑 𝑏𝑦:</b> 𝐴𝑦𝑢𝑠ℎ 𝑆𝑎ℎ𝑢<br>
+          <i>“𝑏𝑢𝑖𝑙𝑑𝑖𝑛𝑔 𝑚𝑦 𝑜𝑤𝑛 𝑒𝑚𝑝𝑖𝑟𝑒 .. 𝑤ℎ𝑒𝑟𝑒 𝑝𝑎𝑠𝑠𝑖𝑜𝑛 𝑚𝑒𝑒𝑡𝑠 𝑝𝑒𝑎𝑐𝑒.”</i>
+        </p>
+
+        <div class="tag-row">
+          <span class="hash-tag">#community</span>
+          <span class="hash-tag">#gaming</span>
+          <span class="hash-tag">#freefire</span>
+          <span class="hash-tag">#roblox</span>
+          <span class="hash-tag">#shayari</span>
+          <span class="hash-tag">#active-vc</span>
+        </div>
       </div>
+    </details>
 
-      <p class="doc-p">
-        𝐿𝑜𝑜𝑘𝑖𝑛𝑔 𝑓𝑜𝑟 𝑎 𝑠𝑎𝑓𝑒 ℎ𝑎𝑣𝑒𝑛 𝑎𝑤𝑎𝑦 𝑓𝑟𝑜𝑚 𝑎𝑙𝑙 𝑡ℎ𝑒 𝑓𝑎𝑘𝑒 𝑒𝑛𝑒𝑟𝑔𝑦 𝑎𝑛𝑑 𝑡𝑜𝑥𝑖𝑐 𝑐𝑟𝑜𝑤𝑑𝑠? 𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 <b>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒</b>—𝑎𝑛 𝑎𝑒𝑠𝑡ℎ𝑒𝑡𝑖𝑐 ℎ𝑜𝑚𝑒 𝑏𝑢𝑖𝑙𝑡 𝑓𝑜𝑟 𝑛𝑖𝑔ℎ𝑡 𝑜𝑤𝑙𝑠, 𝑝𝑎𝑠𝑠𝑖𝑜𝑛𝑎𝑡𝑒 𝑔𝑎𝑚𝑒𝑟𝑠, 𝑎𝑛𝑑 𝑑𝑒𝑒𝑝 𝑡ℎ𝑖𝑛𝑘𝑒𝑟𝑠. 𝑊𝑖𝑡ℎ 𝑎 𝑡𝑖𝑔ℎ𝑡𝑙𝑦-𝑘𝑛𝑖𝑡 𝑐𝑟𝑒𝑤 𝑜𝑓 <b>130+ 𝑔𝑒𝑛𝑢𝑖𝑛𝑒 𝑚𝑒𝑚𝑏𝑒𝑟𝑠</b>, 𝑛𝑜 𝑜𝑛𝑒 𝑠𝑡𝑎𝑦𝑠 𝑎 𝑠𝑡𝑟𝑎𝑛𝑔𝑒𝑟 ℎ𝑒𝑟𝑒 𝑓𝑜𝑟 𝑙𝑜𝑛𝑔.
-      </p>
+    <!-- ओनर कार्ड -->
+    <div class="owner-signature">
+      👑 Owned by Ayush Sahu • <i>🌸 building my own empire ..</i>
+    </div>
 
-      <div class="doc-h2">✨ 𝑊ℎ𝑎𝑡 𝑊𝑒 𝑂𝑓𝑓𝑒𝑟</div>
-      <ul class="doc-ul">
-        <li>🔥 <b>𝐷𝑎𝑖𝑙𝑦 𝑅𝑎𝑛𝑘𝑒𝑑 𝐺𝑟𝑖𝑛𝑑𝑠:</b> 𝐴𝑐𝑡𝑖𝑣𝑒 𝑠𝑞𝑢𝑎𝑑𝑠 𝑓𝑜𝑟 𝐹𝑟𝑒𝑒 𝐹𝑖𝑟𝑒 𝐶𝑆 𝑟𝑎𝑛𝑘 𝑝𝑢𝑠ℎ, 𝑐𝑢𝑠𝑡𝑜𝑚 4𝑣4 𝑠ℎ𝑜𝑤𝑑𝑜𝑤𝑛𝑠, 𝑎𝑛𝑑 𝑠𝑒𝑟𝑖𝑜𝑢𝑠 𝑡𝑜𝑢𝑟𝑛𝑎𝑚𝑒𝑛𝑡 𝑣𝑖𝑏𝑒𝑠.</li>
-        <li>⚡ <b>𝑅𝑜𝑏𝑙𝑜𝑥 & 𝐵𝑙𝑜𝑥 𝐹𝑟𝑢𝑖𝑡𝑠:</b> 𝐹𝑟𝑢𝑖𝑡 𝑡𝑟𝑎𝑑𝑖𝑛𝑔, 𝑃𝑣𝑃 𝑏𝑜𝑢𝑛𝑡𝑦 ℎ𝑢𝑛𝑡𝑖𝑛𝑔, 𝑐𝑜𝑚𝑏𝑜 𝑡𝑒𝑠𝑡𝑖𝑛𝑔, 𝑎𝑛𝑑 𝑝𝑟𝑖𝑣𝑎𝑡𝑒 𝑠𝑒𝑟𝑣𝑒𝑟 𝑐ℎ𝑖𝑙𝑙𝑖𝑛𝑔.</li>
-        <li>🚗 <b>𝐺𝑇𝐴 𝑉 & 𝑀𝑖𝑛𝑒𝑐𝑟𝑎𝑓𝑡 𝑆𝑀𝑃:</b> 𝐿𝑎𝑡𝑒-𝑛𝑖?
+    <footer>
+      <p>© 2026 𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
