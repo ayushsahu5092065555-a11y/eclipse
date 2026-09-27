@@ -2,24 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-  <title>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community</title>
-  <meta name="title" content="𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community">
-  <meta name="description" content="Eclipse Discord Community. Free Fire, Roblox, GTA V, Minecraft squads, voice lounge & late-night shayari. Owned by Ayush Sahu.">
+  <title>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal</title>
+  <meta name="title" content="𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal">
+  <meta name="description" content="Official Portal of Eclipse Community owned by Ayush Sahu. Free Fire MAX, Roblox Blox Fruits, GTA V Online, Minecraft SMP, aesthetic voice lounges & shayari.">
   <meta name="author" content="Ayush Sahu">
-  <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ayushsahu5092065555-a11y.github.io/eclipse/">
-  <meta property="og:title" content="𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // 🌸 Community">
-  <meta property="og:description" content="✦ Active Voice Lounges • Gaming Squads • Owned by Ayush Sahu ✦">
+  <meta property="og:title" content="𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Portal">
+  <meta property="og:description" content="✦ Active Voice Lounges • Gaming Squads • 100+ Guild Members • Owned by Ayush Sahu ✦">
   <meta property="og:image" content="https://ayushsahu5092065555-a11y.github.io/eclipse/banner.gif">
   <meta name="theme-color" content="#ff2a85">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,800;1,900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -27,9 +26,10 @@
       --secondary: #8a2be2;
       --accent: #00f0ff;
       --discord: #5865F2;
-      --bg: #030106;
-      --card-bg: rgba(14, 7, 24, 0.88);
-      --card-border: rgba(255, 42, 133, 0.28);
+      --bg: #030107;
+      --panel: rgba(15, 8, 26, 0.82);
+      --border: rgba(255, 42, 133, 0.24);
+      --glow: 0 0 35px rgba(255, 42, 133, 0.18);
     }
 
     * {
@@ -44,105 +44,151 @@
       background-color: var(--bg);
       color: #ffffff;
       min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 14px 14px 60px;
-      overflow-x: hidden;
-      position: relative;
     }
 
-    /* इंटरेक्टिव पार्टिकल्स कैनवस */
-    #particle-canvas {
+    /* बैकग्राउंड पार्टिकल कैनवस */
+    #ambient-canvas {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       z-index: -2;
       pointer-events: none;
     }
 
-    body::before {
-      content: "";
+    .ambient-sphere {
       position: fixed;
-      top: -20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(255, 42, 133, 0.18) 0%, rgba(138, 43, 226, 0.12) 50%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(100px);
       z-index: -1;
       pointer-events: none;
-      filter: blur(80px);
     }
 
-    /* टॉप बार */
+    .sphere-1 {
+      top: -10%;
+      left: 20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 42, 133, 0.18) 0%, transparent 70%);
+    }
+
+    .sphere-2 {
+      bottom: 5%;
+      right: 15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(138, 43, 226, 0.16) 0%, transparent 70%);
+    }
+
+    /* मेन रिस्पॉन्सिव कंटेनर */
+    .viewport-container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 16px 16px 80px;
+    }
+
+    /* टॉप नेवबार */
     header {
       width: 100%;
-      max-width: 620px;
-      padding: 12px 22px;
-      margin-bottom: 18px;
+      padding: 14px 24px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(18, 9, 32, 0.75);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border-radius: 22px;
+      background: rgba(18, 9, 32, 0.65);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-radius: 24px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
-    .brand-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-style: italic;
-      letter-spacing: 1.5px;
-      background: linear-gradient(120deg, #ffffff, #ffb3d9);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 700;
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    .header-btn {
-      padding: 8px 18px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 42, 133, 0.45);
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-style: italic;
+      letter-spacing: 1.5px;
+      background: linear-gradient(120deg, #ffffff, #ffb3d9, #e0aaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(35, 165, 90, 0.12);
+      border: 1px solid rgba(35, 165, 90, 0.3);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #23a55a;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #23a55a;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #23a55a;
+      animation: pulseAnim 1.8s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.5; }
+    }
+
+    .nav-cta {
+      padding: 9px 20px;
+      background: linear-gradient(135deg, var(--discord), var(--primary));
       color: #fff;
       text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 800;
       border-radius: 20px;
+      box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
       transition: all 0.25s ease;
     }
 
-    .header-btn:hover {
-      background: var(--primary);
-      box-shadow: 0 0 18px var(--primary);
+    .nav-cta:hover {
       transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255, 42, 133, 0.6);
     }
 
-    /* मुख्य कार्ड */
-    .main-card {
+    /* मुख्य सर्वर हीरो कार्ड */
+    .hero-card {
       width: 100%;
-      max-width: 620px;
-      background: var(--card-bg);
+      background: var(--panel);
       border-radius: 32px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 40px rgba(255, 42, 133, 0.16);
+      border: 1px solid var(--border);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), var(--glow);
       backdrop-filter: blur(30px);
       -webkit-backdrop-filter: blur(30px);
       overflow: hidden;
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
     }
 
     .banner-container {
       width: 100%;
-      height: 190px;
+      height: clamp(180px, 28vw, 320px);
       position: relative;
-      background: #09030e;
+      background: #000;
       overflow: hidden;
     }
 
@@ -151,41 +197,40 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: brightness(0.92);
-      transition: transform 0.5s ease;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .main-card:hover .banner-container img {
-      transform: scale(1.02);
+    .hero-card:hover .banner-container img {
+      transform: scale(1.03);
     }
 
-    .banner-overlay {
+    .banner-fade {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(14, 7, 24, 1) 0%, rgba(14, 7, 24, 0.2) 65%, transparent 100%);
+      background: linear-gradient(to top, rgba(15, 8, 26, 1) 0%, rgba(15, 8, 26, 0.25) 60%, transparent 100%);
     }
 
-    .avatar-container {
-      position: relative;
-      margin-top: -58px;
-      margin-bottom: 12px;
+    .avatar-wrapper {
+      margin-top: clamp(-55px, -7vw, -70px);
+      margin-bottom: 14px;
       display: inline-block;
+      position: relative;
     }
 
-    .avatar-glow {
-      width: 102px;
-      height: 102px;
+    .avatar-glow-ring {
+      width: clamp(96px, 12vw, 130px);
+      height: clamp(96px, 12vw, 130px);
       border-radius: 50%;
       padding: 3.5px;
       background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
-      box-shadow: 0 0 28px rgba(255, 42, 133, 0.7);
+      box-shadow: 0 0 35px rgba(255, 42, 133, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: rotateGlow 6s linear infinite;
+      animation: rotateGlow 8s linear infinite;
     }
 
     @keyframes rotateGlow {
@@ -193,7 +238,7 @@
       100% { filter: hue-rotate(360deg); }
     }
 
-    .avatar-glow img {
+    .avatar-glow-ring img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
@@ -201,66 +246,51 @@
       background: #11071c;
     }
 
-    .card-content {
-      padding: 0 22px 28px;
+    .hero-content {
+      padding: 0 20px 32px;
+      max-width: 650px;
+      margin: 0 auto;
     }
 
     .server-name {
       font-family: 'Playfair Display', serif;
-      font-size: 34px;
+      font-size: clamp(32px, 6vw, 48px);
       font-style: italic;
       letter-spacing: 2px;
-      background: linear-gradient(120deg, #ffffff, #ffb3d9, #e0aaff);
+      background: linear-gradient(120deg, #ffffff 10%, #ffb3d9 50%, #e0aaff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 4px;
-      font-weight: 800;
+      margin-bottom: 6px;
+      font-weight: 900;
     }
 
-    .server-sub {
-      font-size: 13px;
-      color: #9d8eb5;
+    .server-tagline {
+      font-size: clamp(13px, 2.5vw, 15px);
+      color: #a797be;
       letter-spacing: 1px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
-    .stats-pill {
+    .stats-pill-hub {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       background: rgba(255, 255, 255, 0.04);
-      padding: 6px 20px;
-      border-radius: 20px;
+      padding: 7px 22px;
+      border-radius: 30px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
-    .dot-live {
-      width: 8px;
-      height: 8px;
-      background: #23a55a;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #23a55a;
-      margin-right: 5px;
-      display: inline-block;
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 0.6; }
-    }
-
-    /* मुख्य जॉइन बटन */
-    .join-btn-main {
+    .join-btn-master {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       width: 100%;
-      padding: 17px 22px;
+      padding: 18px 26px;
       background: linear-gradient(135deg, var(--discord), var(--primary));
       border-radius: 20px;
       color: #ffffff;
@@ -272,371 +302,377 @@
       transition: all 0.25s ease;
     }
 
-    .join-btn-main:hover {
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 16px 45px rgba(88, 101, 242, 0.75), 0 0 35px rgba(255, 42, 133, 0.65);
+    .join-btn-master:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 18px 50px rgba(88, 101, 242, 0.75), 0 0 35px rgba(255, 42, 133, 0.6);
     }
 
-    .join-btn-main svg {
-      width: 25px;
-      height: 25px;
+    .join-btn-master:active {
+      transform: scale(0.98);
+    }
+
+    .join-btn-master svg {
+      width: 26px;
+      height: 26px;
       fill: #ffffff;
     }
 
-    /* गेमिंग सेक्शन */
+    /* सेक्शन टाइटल्स */
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 21px;
+      font-size: clamp(22px, 4vw, 28px);
       font-style: italic;
       color: #ffb6c1;
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       letter-spacing: 1.5px;
     }
 
-    .gaming-container {
-      width: 100%;
-      max-width: 620px;
+    /* गेमिंग स्क्वाड ग्रिड (ऑटो-रिस्पॉन्सिव: मोबाइल 2, पीसी 4) */
+    .gaming-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
     }
 
-    .game-card-link {
+    .game-card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 42, 133, 0.2);
+      border-radius: 22px;
+      padding: 18px 16px;
+      text-decoration: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 42, 133, 0.2);
-      border-radius: 20px;
-      padding: 16px 14px;
-      text-align: left;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(20px);
       transition: all 0.25s ease;
       cursor: pointer;
     }
 
-    .game-card-link:hover {
+    .game-card:hover {
       background: rgba(255, 42, 133, 0.08);
       border-color: rgba(255, 42, 133, 0.55);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 42, 133, 0.2);
     }
 
-    .game-card-top {
+    .game-card:active {
+      transform: scale(0.97);
+    }
+
+    .game-top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 12px;
     }
 
-    .game-svg-badge {
-      width: 36px;
-      height: 36px;
+    .game-svg-frame {
+      width: 42px;
+      height: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .game-action {
+    .game-action-tag {
       font-size: 10px;
-      color: var(--accent);
       font-weight: 800;
-      letter-spacing: 0.8px;
+      color: var(--accent);
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.6px;
     }
 
     .game-title {
-      font-size: 14.5px;
+      font-size: 15.5px;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .game-desc {
-      font-size: 11px;
+      font-size: 11.5px;
       color: #9d8eb5;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
-    /* ओनर बैज */
-    .owner-badge {
-      width: 100%;
-      max-width: 620px;
-      padding: 14px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 215, 0, 0.25);
-      border-radius: 18px;
-      margin-bottom: 22px;
+    /* मेंबर्स हब (गेम्स के ठीक नीचे) */
+    .members-hub {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 24px 20px;
+      margin-bottom: 35px;
+      backdrop-filter: blur(25px);
+    }
+
+    .members-hub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding: 0 4px;
+    }
+
+    .members-hub-title {
       font-size: 13px;
-      color: #ffd700;
-      font-weight: 700;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
+      font-weight: 800;
+      color: #e0aaff;
+      letter-spacing: 1px;
     }
 
-    .owner-badge i {
+    .members-dynamic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+      max-height: 320px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .members-dynamic-grid::-webkit-scrollbar {
+      width: 4px;
+    }
+    .members-dynamic-grid::-webkit-scrollbar-thumb {
+      background: rgba(255, 42, 133, 0.4);
+      border-radius: 4px;
+    }
+
+    .member-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 9px 12px;
+      border-radius: 16px;
+      transition: background 0.2s ease;
+    }
+
+    .member-badge-item:hover {
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .member-avatar-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .status-online-dot {
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 9px;
+      height: 9px;
+      background: #23a55a;
+      border-radius: 50%;
+      border: 2px solid #07030d;
+    }
+
+    .member-info-col {
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .member-name-text {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .member-name-text.founder {
+      color: #ffd700;
+    }
+
+    .member-role-text {
+      font-size: 10.5px;
+      color: #8c7e9f;
+    }
+
+    /* ओनर सिग्नेचर कार्ड */
+    .owner-signature {
+      width: 100%;
+      padding: 16px 20px;
+      text-align: center;
+      background: rgba(255, 215, 0, 0.03);
+      border: 1px solid rgba(255, 215, 0, 0.28);
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.06);
+    }
+
+    .owner-title-txt {
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffd700;
+      margin-bottom: 3px;
+    }
+
+    .owner-motto-txt {
       font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 13.5px;
       color: #e0aaff;
-      font-weight: 400;
-      margin-left: 6px;
     }
 
     footer {
+      width: 100%;
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       font-size: 11.5px;
       color: #635775;
-      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- पार्टिकल्स कैनवस -->
-  <canvas id="particle-canvas"></canvas>
+  <canvas id="ambient-canvas"></canvas>
+  <div class="ambient-sphere sphere-1"></div>
+  <div class="ambient-sphere sphere-2"></div>
 
-  <!-- हेडर -->
-  <header>
-    <div class="brand-title">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
-    <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="header-btn audio-trigger">Join Discord</a>
-  </header>
+  <div class="viewport-container">
 
-  <!-- मुख्य कार्ड -->
-  <div class="main-card">
-    <div class="banner-container">
-      <img src="banner.gif" alt="Eclipse Banner" onerror="this.src='banner.jpg'">
-      <div class="banner-overlay"></div>
-    </div>
+    <!-- टॉप हेडर -->
+    <header>
+      <div class="brand-group">
+        <div class="brand-title">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
+        <div class="live-badge">
+          <span class="live-dot"></span>
+          <span>41 ONLINE</span>
+        </div>
+      </div>
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="nav-cta audio-engine">JOIN SERVER</a>
+    </header>
 
-    <div class="avatar-container">
-      <div class="avatar-glow">
-        <img src="logo.png" alt="Eclipse Icon" onerror="this.src='banner.gif'">
+    <!-- मुख्य सर्वर कार्ड -->
+    <div class="hero-card">
+      <div class="banner-container">
+        <img src="banner.gif" alt="Eclipse Animated Banner" onerror="this.src='banner.jpg'">
+        <div class="banner-fade"></div>
+      </div>
+
+      <div class="avatar-wrapper">
+        <div class="avatar-glow-ring">
+          <img src="logo.png" alt="Eclipse Avatar" onerror="this.src='banner.gif'">
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="server-name">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</h1>
+        <p class="server-tagline">active chat . gaming squads . pfps . midnight shayari</p>
+
+        <div class="stats-pill-hub">
+          <div><span class="live-dot"></span> 41 Members Active</div>
+          <div style="color: rgba(255,255,255,0.2);">•</div>
+          <div>👥 131 Guild Members</div>
+        </div>
+
+        <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="join-btn-master audio-engine">
+          <svg viewBox="0 0 127.14 96.36">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
+          <span>JOIN DISCORD SERVER</span>
+        </a>
       </div>
     </div>
 
-    <div class="card-content">
-      <h1 class="server-name">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</h1>
-      <p class="server-sub">active chat . gaming squads . midnight shayari</p>
+    <!-- 1. गेमिंग स्क्वाड सेक्शन (100% ऑफिशियल वेक्टर लोगोज़) -->
+    <h2 class="section-title">🎮 . 𝐺𝐴𝑀𝐼𝑁𝐺 𝑆𝑄𝑈𝐴𝐷𝑆 . 🎮</h2>
+    <div class="gaming-grid">
 
-      <div class="stats-pill">
-        <div><span class="dot-live"></span> 41 Online</div>
-        <div style="color: rgba(255,255,255,0.2);">•</div>
-        <div>👥 131 Members</div>
-      </div>
-
-      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="join-btn-main audio-trigger">
-        <svg viewBox="0 0 127.14 96.36">
-          <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,45.91,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,45.91,96.12,53,91.08,65.69,84.69,65.69Z"/>
-        </svg>
-        <span>JOIN DISCORD SERVER</span>
+      <!-- Free Fire: Official FF Emblem Badge -->
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+        <div class="game-top-bar">
+          <div class="game-svg-frame">
+            <svg viewBox="0 0 100 100" width="38" height="38">
+              <path d="M50 5 L88 22 L82 72 L50 95 L18 72 L12 22 Z" fill="#ff7a00" stroke="#ffd700" stroke-width="3"/>
+              <path d="M50 15 L78 30 L50 78 L22 30 Z" fill="#11071c"/>
+              <text x="50" y="55" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="900" text-anchor="middle">FF</text>
+            </svg>
+          </div>
+          <span class="game-action-tag">JOIN VC ➔</span>
+        </div>
+        <div>
+          <div class="game-title">Free Fire MAX</div>
+          <div class="game-desc">Daily CS rank push, guild wars & custom battles.</div>
+        </div>
       </a>
+
+      <!-- Roblox: Official 2022 Tilt Logo -->
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+        <div class="game-top-bar">
+          <div class="game-svg-frame">
+            <svg viewBox="0 0 100 100" width="34" height="34">
+              <rect x="20" y="20" width="60" height="60" rx="12" transform="rotate(-15 50 50)" fill="#ffffff"/>
+              <rect x="38" y="38" width="24" height="24" rx="4" transform="rotate(-15 50 50)" fill="#0d0614"/>
+            </svg>
+          </div>
+          <span class="game-action-tag">JOIN VC ➔</span>
+        </div>
+        <div>
+          <div class="game-title">Roblox</div>
+          <div class="game-desc">Blox Fruits trades, PvP showcases & fruit giveaways.</div>
+        </div>
+      </a>
+
+      <!-- GTA V: Official Roman V Logo -->
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+        <div class="game-top-bar">
+          <div class="game-svg-frame">
+            <svg viewBox="0 0 100 100" width="38" height="38">
+              <path d="M22 15 L42 85 L58 85 L78 15 L62 15 L50 68 L38 15 Z" fill="#2d882d" stroke="#ffffff" stroke-width="2"/>
+              <rect x="15" y="46" width="70" height="15" rx="3" fill="#ffffff"/>
+              <text x="50" y="58" fill="#1b5e20" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="1">FIVE</text>
+            </svg>
+          </div>
+          <span class="game-action-tag">JOIN VC ➔</span>
+        </div>
+        <div>
+          <div class="game-title">GTA V Online</div>
+          <div class="game-desc">Heist crews, car meets & multiplayer lobbies.</div>
+        </div>
+      </a>
+
+      <!-- Minecraft: Official Isometric 3D Dirt/Grass Block -->
+      <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
+        <div class="game-top-bar">
+          <div class="game-svg-frame">
+            <svg viewBox="0 0 100 100" width="38" height="38">
+              <polygon points="50,10 88,32 50,54 12,32" fill="#5b8731"/>
+              <polygon points="12,32 50,54 50,92 12,70" fill="#866043"/>
+              <polygon points="50,54 88,32 88,70 50,92" fill="#573d26"/>
+              <polygon points="12,32 50,54 50,60 12,38" fill="#4d7328"/>
+              <polygon points="50,54 88,32 88,38 50,60" fill="#3c5a1f"/>
+            </svg>
+          </div>
+          <span class="game-action-tag">JOIN VC ➔</span>
+        </div>
+        <div>
+          <div class="game-title">Minecraft SMP</div>
+          <div class="game-desc">Survival SMP, Bedwars squads & building realms.</div>
+        </div>
+      </a>
+
     </div>
-  </div>
 
-  <!-- गेमिंग स्क्वाड सेक्शन (100% ऑफिशियल वेक्टर लोगोज़) -->
-  <h2 class="section-title">🎮 . 𝐺𝐴𝑀𝐼𝑁𝐺 𝑆𝑄𝑈𝐴𝐷𝑆 . 🎮</h2>
-  <div class="gaming-container">
-
-    <!-- Free Fire: Official FF Emblem Badge -->
-    <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card-link audio-trigger">
-      <div class="game-card-top">
-        <div class="game-svg-badge">
-          <svg viewBox="0 0 100 100" width="36" height="36">
-            <path d="M50 5 L88 22 L82 72 L50 95 L18 72 L12 22 Z" fill="#ff7a00" stroke="#ffd700" stroke-width="3"/>
-            <path d="M50 15 L78 30 L50 78 L22 30 Z" fill="#11071c"/>
-            <text x="50" y="55" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="900" text-anchor="middle">FF</text>
-          </svg>
-        </div>
-        <span class="game-action">JOIN VC ➔</span>
-      </div>
-      <div>
-        <div class="game-title">Free Fire MAX</div>
-        <div class="game-desc">Daily CS rank push, guild wars & custom matches.</div>
-      </div>
-    </a>
-
-    <!-- Roblox: Official 2022 Tilt Logo -->
-    <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card-link audio-trigger">
-      <div class="game-card-top">
-        <div class="game-svg-badge">
-          <svg viewBox="0 0 100 100" width="34" height="34">
-            <rect x="20" y="20" width="60" height="60" rx="12" transform="rotate(-15 50 50)" fill="#ffffff"/>
-            <rect x="38" y="38" width="24" height="24" rx="4" transform="rotate(-15 50 50)" fill="#0d0614"/>
-          </svg>
-        </div>
-        <span class="game-action">JOIN VC ➔</span>
-      </div>
-      <div>
-        <div class="game-title">Roblox</div>
-        <div class="game-desc">Blox Fruits trades, PvP lobbies & fruit showcase.</div>
-      </div>
-    </a>
-
-    <!-- GTA V: Official Roman V Logo -->
-    <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card-link audio-trigger">
-      <div class="game-card-top">
-        <div class="game-svg-badge">
-          <svg viewBox="0 0 100 100" width="36" height="36">
-            <path d="M22 15 L42 85 L58 85 L78 15 L62 15 L50 68 L38 15 Z" fill="#2d882d" stroke="#ffffff" stroke-width="2"/>
-            <rect x="15" y="46" width="70" height="15" rx="3" fill="#ffffff"/>
-            <text x="50" y="58" fill="#1b5e20" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="1">FIVE</text>
-          </svg>
-        </div>
-        <span class="game-action">JOIN VC ➔</span>
-      </div>
-      <div>
-        <div class="game-title">GTA V Online</div>
-        <div class="game-desc">Heist crews, car meets & multiplayer lobbies.</div>
-      </div>
-    </a>
-
-    <!-- Minecraft: Official Isometric 3D Dirt/Grass Block -->
-    <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card-link audio-trigger">
-      <div class="game-card-top">
-        <div class="game-svg-badge">
-          <svg viewBox="0 0 100 100" width="36" height="36">
-            <!-- Isometric Cube -->
-            <polygon points="50,10 88,32 50,54 12,32" fill="#5b8731"/>
-            <polygon points="12,32 50,54 50,92 12,70" fill="#866043"/>
-            <polygon points="50,54 88,32 88,70 50,92" fill="#573d26"/>
-            <!-- Pixel details -->
-            <polygon points="12,32 50,54 50,60 12,38" fill="#4d7328"/>
-            <polygon points="50,54 88,32 88,38 50,60" fill="#3c5a1f"/>
-          </svg>
-        </div>
-        <span class="game-action">JOIN VC ➔</span>
-      </div>
-      <div>
-        <div class="game-title">Minecraft SMP</div>
-        <div class="game-desc">Survival SMP, Bedwars squads & community realm.</div>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- ओनर कार्ड -->
-  <div class="owner-badge audio-trigger">
-    👑 Owned by Ayush Sahu • <i>🌸 building my own empire ..</i>
-  </div>
-
-  <footer>
-    <p>© 2026 𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community</p>
-  </footer>
-
-  <!-- ADVANCED WEB AUDIO & PARTICLE ENGINE SCRIPT -->
-  <script>
-    // 1. Web Audio API Sound Synth Engine (बिना किसी फाइल लोड के असली गेमिंग ऑडियो)
-    const AudioEngine = {
-      ctx: null,
-      init() {
-        if (!this.ctx) {
-          const AudioContext = window.AudioContext || window.webkitAudioContext;
-          this.ctx = new AudioContext();
-        }
-      },
-      playClickSound() {
-        this.init();
-        if (this.ctx.state === 'suspended') this.ctx.resume();
-
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(800, this.ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(150, this.ctx.currentTime + 0.08);
-
-        gain.gain.setValueAtTime(0.25, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.08);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-
-        osc.start();
-        osc.stop(this.ctx.currentTime + 0.08);
-      },
-      playWaveHoverSound() {
-        this.init();
-        if (this.ctx.state === 'suspended') this.ctx.resume();
-
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(320, this.ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(640, this.ctx.currentTime + 0.12);
-
-        gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.12);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-
-        osc.start();
-        osc.stop(this.ctx.currentTime + 0.12);
-      }
-    };
-
-    // साउंड ट्रिगर्स बाइंडिंग
-    document.querySelectorAll('.audio-trigger, .join-btn-main, .header-btn, .game-card-link').forEach(elem => {
-      elem.addEventListener('mouseenter', () => AudioEngine.playWaveHoverSound());
-      elem.addEventListener('touchstart', () => AudioEngine.playWaveHoverSound(), { passive: true });
-      elem.addEventListener('click', () => AudioEngine.playClickSound());
-    });
-
-    // 2. लाइव पार्टिकल्स कैनवस एनीमेशन
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    class Particle {
-      constructor() {
-        this.reset();
-      }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.8;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
-        this.color = Math.random() > 0.5 ? 'rgba(255, 42, 133, ' : 'rgba(0, 240, 255, ';
-        this.alpha = Math.random() * 0.5 + 0.2;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-          this.reset();
-        }
-      }
-      draw() {
-        ctx.fillStyle = this.color + this.alpha + ')';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    for (let i = 0; i < 40; i++) {
-      particles.push(new Particle());
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
-  </script>
-
-</body>
-</html>
+    <!-- 2. मेंबर्स सेक्शन (गेम्स के ठीक नीचे) -->
+    <h2 class="section-title">👥 . 𝑀𝐸𝑀𝐵𝐸𝑅𝑆 . 👥</h2>
+    <div class="members-hub">
+      <div class="members-hub-header">
+        <span class="members-hub-title">✦ 41 ACTIVE 
