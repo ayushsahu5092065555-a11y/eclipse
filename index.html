@@ -6,13 +6,13 @@
 
   <title>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal</title>
   <meta name="title" content="𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal">
-  <meta name="description" content="Official Portal of Eclipse Community owned by Ayush Sahu. Free Fire MAX, Roblox Blox Fruits, GTA V Online, Minecraft SMP, aesthetic voice lounges & shayari.">
+  <meta name="description" content="Official Portal of Eclipse Community owned by Ayush Sahu. Free Fire MAX, Roblox Blox Fruits, GTA V Online, Minecraft SMP & aesthetic midnight shayari.">
   <meta name="author" content="Ayush Sahu">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ayushsahu5092065555-a11y.github.io/eclipse/">
   <meta property="og:title" content="𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Portal">
-  <meta property="og:description" content="✦ Active Voice Lounges • Gaming Squads • 100+ Guild Members • Owned by Ayush Sahu ✦">
+  <meta property="og:description" content="✦ Active Voice Lounges • Gaming Squads • 130+ Community • Owned by Ayush Sahu ✦">
   <meta property="og:image" content="https://ayushsahu5092065555-a11y.github.io/eclipse/banner.gif">
   <meta name="theme-color" content="#ff2a85">
 
@@ -27,9 +27,8 @@
       --accent: #00f0ff;
       --discord: #5865F2;
       --bg: #030107;
-      --panel: rgba(15, 8, 26, 0.82);
-      --border: rgba(255, 42, 133, 0.24);
-      --glow: 0 0 35px rgba(255, 42, 133, 0.18);
+      --panel: rgba(15, 8, 26, 0.85);
+      --border: rgba(255, 42, 133, 0.25);
     }
 
     * {
@@ -45,13 +44,12 @@
       color: #ffffff;
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
     }
 
-    /* बैकग्राउंड पार्टिकल कैनवस */
     #ambient-canvas {
       position: fixed;
       top: 0;
@@ -62,131 +60,64 @@
       pointer-events: none;
     }
 
-    .ambient-sphere {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(100px);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .sphere-1 {
-      top: -10%;
-      left: 20%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(255, 42, 133, 0.18) 0%, transparent 70%);
-    }
-
-    .sphere-2 {
-      bottom: 5%;
-      right: 15%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(138, 43, 226, 0.16) 0%, transparent 70%);
-    }
-
-    /* मेन रिस्पॉन्सिव कंटेनर */
     .viewport-container {
       width: 100%;
-      max-width: 1200px;
-      padding: 16px 16px 80px;
+      max-width: 650px;
+      padding: 14px 14px 60px;
     }
 
-    /* टॉप नेवबार */
+    /* टॉप हेडर */
     header {
       width: 100%;
-      padding: 14px 24px;
-      margin-bottom: 24px;
+      padding: 12px 20px;
+      margin-bottom: 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: rgba(18, 9, 32, 0.65);
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
-      border-radius: 24px;
+      backdrop-filter: blur(25px);
+      border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    }
-
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 14px;
     }
 
     .brand-title {
       font-family: 'Playfair Display', serif;
-      font-size: 22px;
+      font-size: 20px;
       font-style: italic;
       letter-spacing: 1.5px;
-      background: linear-gradient(120deg, #ffffff, #ffb3d9, #e0aaff);
+      background: linear-gradient(120deg, #ffffff, #ffb3d9);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 800;
     }
 
-    .live-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(35, 165, 90, 0.12);
-      border: 1px solid rgba(35, 165, 90, 0.3);
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #23a55a;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      background: #23a55a;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #23a55a;
-      animation: pulseAnim 1.8s infinite;
-    }
-
-    @keyframes pulseAnim {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.5; }
-    }
-
     .nav-cta {
-      padding: 9px 20px;
+      padding: 8px 18px;
       background: linear-gradient(135deg, var(--discord), var(--primary));
       color: #fff;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
-      transition: all 0.25s ease;
+      border-radius: 18px;
+      box-shadow: 0 0 15px rgba(88, 101, 242, 0.4);
     }
 
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(255, 42, 133, 0.6);
-    }
-
-    /* मुख्य सर्वर हीरो कार्ड */
+    /* मुख्य हीरो कार्ड */
     .hero-card {
       width: 100%;
       background: var(--panel);
-      border-radius: 32px;
+      border-radius: 28px;
       border: 1px solid var(--border);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), var(--glow);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
       overflow: hidden;
       text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
     }
 
     .banner-container {
       width: 100%;
-      height: clamp(180px, 28vw, 320px);
+      height: 185px;
       position: relative;
       background: #000;
       overflow: hidden;
@@ -197,11 +128,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .hero-card:hover .banner-container img {
-      transform: scale(1.03);
     }
 
     .banner-fade {
@@ -210,32 +136,25 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(15, 8, 26, 1) 0%, rgba(15, 8, 26, 0.25) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(15, 8, 26, 1) 0%, rgba(15, 8, 26, 0.2) 60%, transparent 100%);
     }
 
     .avatar-wrapper {
-      margin-top: clamp(-55px, -7vw, -70px);
-      margin-bottom: 14px;
+      margin-top: -55px;
+      margin-bottom: 12px;
       display: inline-block;
-      position: relative;
     }
 
     .avatar-glow-ring {
-      width: clamp(96px, 12vw, 130px);
-      height: clamp(96px, 12vw, 130px);
+      width: 98px;
+      height: 98px;
       border-radius: 50%;
-      padding: 3.5px;
+      padding: 3px;
       background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
-      box-shadow: 0 0 35px rgba(255, 42, 133, 0.7);
+      box-shadow: 0 0 25px rgba(255, 42, 133, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: rotateGlow 8s linear infinite;
-    }
-
-    @keyframes rotateGlow {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
     }
 
     .avatar-glow-ring img {
@@ -247,323 +166,375 @@
     }
 
     .hero-content {
-      padding: 0 20px 32px;
-      max-width: 650px;
-      margin: 0 auto;
+      padding: 0 20px 25px;
     }
 
     .server-name {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 6vw, 48px);
+      font-size: 34px;
       font-style: italic;
-      letter-spacing: 2px;
-      background: linear-gradient(120deg, #ffffff 10%, #ffb3d9 50%, #e0aaff 100%);
+      letter-spacing: 1.5px;
+      background: linear-gradient(120deg, #ffffff, #ffb3d9, #e0aaff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 6px;
-      font-weight: 900;
+      margin-bottom: 4px;
+      font-weight: 800;
     }
 
     .server-tagline {
-      font-size: clamp(13px, 2.5vw, 15px);
+      font-size: 13px;
       color: #a797be;
-      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .stats-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 12.5px;
+      font-weight: 600;
       margin-bottom: 20px;
     }
 
-    .stats-pill-hub {
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 7px 22px;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 24px;
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #23a55a;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #23a55a;
+      display: inline-block;
+      margin-right: 5px;
     }
 
     .join-btn-master {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
-      padding: 18px 26px;
+      padding: 16px 20px;
       background: linear-gradient(135deg, var(--discord), var(--primary));
-      border-radius: 20px;
+      border-radius: 18px;
       color: #ffffff;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 800;
-      letter-spacing: 1px;
-      box-shadow: 0 12px 35px rgba(88, 101, 242, 0.55), 0 0 25px rgba(255, 42, 133, 0.4);
-      transition: all 0.25s ease;
+      letter-spacing: 0.8px;
+      box-shadow: 0 10px 30px rgba(88, 101, 242, 0.5), 0 0 20px rgba(255, 42, 133, 0.35);
+      transition: all 0.2s ease;
     }
 
     .join-btn-master:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 18px 50px rgba(88, 101, 242, 0.75), 0 0 35px rgba(255, 42, 133, 0.6);
-    }
-
-    .join-btn-master:active {
-      transform: scale(0.98);
+      transform: translateY(-2px);
     }
 
     .join-btn-master svg {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       fill: #ffffff;
     }
 
     /* सेक्शन टाइटल्स */
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(22px, 4vw, 28px);
+      font-size: 21px;
       font-style: italic;
       color: #ffb6c1;
       text-align: center;
-      margin-bottom: 20px;
-      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
     }
 
-    /* गेमिंग स्क्वाड ग्रिड (ऑटो-रिस्पॉन्सिव: मोबाइल 2, पीसी 4) */
+    /* गेमिंग सेक्शन ग्रिड */
     .gaming-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 25px;
     }
 
     .game-card {
       background: var(--panel);
       border: 1px solid rgba(255, 42, 133, 0.2);
-      border-radius: 22px;
-      padding: 18px 16px;
+      border-radius: 18px;
+      padding: 14px 12px;
       text-decoration: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      backdrop-filter: blur(20px);
-      transition: all 0.25s ease;
-      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     .game-card:hover {
       background: rgba(255, 42, 133, 0.08);
-      border-color: rgba(255, 42, 133, 0.55);
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 42, 133, 0.2);
-    }
-
-    .game-card:active {
-      transform: scale(0.97);
+      border-color: rgba(255, 42, 133, 0.5);
+      transform: translateY(-2px);
     }
 
     .game-top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .game-svg-frame {
-      width: 42px;
-      height: 42px;
+      width: 34px;
+      height: 34px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .game-action-tag {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
       color: var(--accent);
       background: rgba(0, 240, 255, 0.1);
-      border: 1px solid rgba(0, 240, 255, 0.2);
-      padding: 4px 10px;
-      border-radius: 12px;
-      letter-spacing: 0.6px;
+      padding: 3px 8px;
+      border-radius: 10px;
     }
 
     .game-title {
-      font-size: 15.5px;
+      font-size: 14px;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .game-desc {
-      font-size: 11.5px;
+      font-size: 10.5px;
       color: #9d8eb5;
-      line-height: 1.4;
+      line-height: 1.3;
     }
 
-    /* मेंबर्स हब (गेम्स के ठीक नीचे) */
-    .members-hub {
+    /* DISCADIA STYLE MEMBER AVATAR BUBBLE CARD */
+    .discadia-members-card {
       background: var(--panel);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 28px;
-      padding: 24px 20px;
-      margin-bottom: 35px;
-      backdrop-filter: blur(25px);
-    }
-
-    .members-hub-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-      padding: 0 4px;
-    }
-
-    .members-hub-title {
-      font-size: 13px;
-      font-weight: 800;
-      color: #e0aaff;
-      letter-spacing: 1px;
-    }
-
-    .members-dynamic-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 10px;
-      max-height: 320px;
-      overflow-y: auto;
-      padding-right: 4px;
-    }
-
-    .members-dynamic-grid::-webkit-scrollbar {
-      width: 4px;
-    }
-    .members-dynamic-grid::-webkit-scrollbar-thumb {
-      background: rgba(255, 42, 133, 0.4);
-      border-radius: 4px;
-    }
-
-    .member-badge-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      padding: 9px 12px;
-      border-radius: 16px;
-      transition: background 0.2s ease;
-    }
-
-    .member-badge-item:hover {
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    .member-avatar-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .status-online-dot {
-      position: absolute;
-      bottom: -1px;
-      right: -1px;
-      width: 9px;
-      height: 9px;
-      background: #23a55a;
-      border-radius: 50%;
-      border: 2px solid #07030d;
-    }
-
-    .member-info-col {
-      overflow: hidden;
+      border-radius: 22px;
+      padding: 20px 18px;
+      margin-bottom: 20px;
       text-align: left;
     }
 
-    .member-name-text {
-      font-size: 12.5px;
-      font-weight: 700;
+    .member-count-big {
+      font-size: 28px;
+      font-weight: 800;
       color: #ffffff;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      line-height: 1.1;
     }
 
-    .member-name-text.founder {
-      color: #ffd700;
+    .member-status-sub {
+      font-size: 12.5px;
+      color: #23a55a;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .member-role-text {
-      font-size: 10.5px;
-      color: #8c7e9f;
+    .avatar-bubble-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-height: 110px;
+      overflow-y: auto;
+      padding-top: 4px;
     }
 
-    /* ओनर सिग्नेचर कार्ड */
-    .owner-signature {
+    .avatar-bubble-row::-webkit-scrollbar {
+      width: 3px;
+    }
+    .avatar-bubble-row::-webkit-scrollbar-thumb {
+      background: rgba(255, 42, 133, 0.4);
+      border-radius: 3px;
+    }
+
+    .member-bubble {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #5865F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .member-bubble svg {
+      width: 17px;
+      height: 17px;
+      fill: #ffffff;
+    }
+
+    .bubble-dot {
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 7.5px;
+      height: 7.5px;
+      border-radius: 50%;
+      background: #23a55a;
+      border: 1.5px solid #0b0512;
+    }
+
+    /* READ MORE BUTTON & EXPANDABLE DETAILS */
+    .read-more-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       width: 100%;
-      padding: 16px 20px;
-      text-align: center;
-      background: rgba(255, 215, 0, 0.03);
-      border: 1px solid rgba(255, 215, 0, 0.28);
-      border-radius: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.06);
+      padding: 15px 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 42, 133, 0.35);
+      border-radius: 18px;
+      color: #ffb3d9;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 22px;
+      transition: all 0.25s ease;
     }
 
-    .owner-title-txt {
-      font-size: 14px;
+    .read-more-trigger:hover {
+      background: rgba(255, 42, 133, 0.1);
+      border-color: var(--primary);
+    }
+
+    /* इन-पेज एक्सपेंडेबल डिटेल्स बॉक्स */
+    #details-section {
+      display: none;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 22px 18px;
+      margin-bottom: 24px;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    #details-section.open {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .doc-badge {
+      display: inline-block;
+      font-size: 11px;
       font-weight: 800;
       color: #ffd700;
-      margin-bottom: 3px;
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-bottom: 12px;
     }
 
-    .owner-motto-txt {
-      font-family: 'Playfair Display', serif;
+    .doc-quote {
       font-style: italic;
-      font-size: 13.5px;
       color: #e0aaff;
+      border-left: 2px solid var(--primary);
+      padding-left: 10px;
+      margin-bottom: 14px;
+      font-size: 13px;
+    }
+
+    .doc-h2 {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 18px 0 8px;
+    }
+
+    .doc-p {
+      font-size: 12.5px;
+      color: #b3a5c7;
+      margin-bottom: 12px;
+    }
+
+    .doc-ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .doc-ul li {
+      font-size: 12px;
+      color: #b3a5c7;
+      line-height: 1.45;
+    }
+
+    .doc-ul li b {
+      color: #ffffff;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .hash-tag {
+      font-size: 11px;
+      color: #8c7e9f;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .owner-signature {
+      width: 100%;
+      padding: 14px 16px;
+      text-align: center;
+      background: rgba(255, 215, 0, 0.03);
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      border-radius: 18px;
+      margin-bottom: 22px;
+      font-size: 13px;
+      color: #ffd700;
+      font-weight: 700;
     }
 
     footer {
-      width: 100%;
-      text-align: center;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 11.5px;
+      font-size: 11px;
       color: #635775;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
   <canvas id="ambient-canvas"></canvas>
-  <div class="ambient-sphere sphere-1"></div>
-  <div class="ambient-sphere sphere-2"></div>
 
   <div class="viewport-container">
 
     <!-- टॉप हेडर -->
     <header>
-      <div class="brand-group">
-        <div class="brand-title">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
-        <div class="live-badge">
-          <span class="live-dot"></span>
-          <span>41 ONLINE</span>
-        </div>
-      </div>
+      <div class="brand-title">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="nav-cta audio-engine">JOIN SERVER</a>
     </header>
 
     <!-- मुख्य सर्वर कार्ड -->
     <div class="hero-card">
       <div class="banner-container">
-        <img src="banner.gif" alt="Eclipse Animated Banner" onerror="this.src='banner.jpg'">
+        <img src="banner.gif" alt="Eclipse Banner" onerror="this.src='banner.jpg'">
         <div class="banner-fade"></div>
       </div>
 
@@ -575,9 +546,9 @@
 
       <div class="hero-content">
         <h1 class="server-name">𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</h1>
-        <p class="server-tagline">active chat . gaming squads . pfps . midnight shayari</p>
+        <p class="server-tagline">active chat . gaming squads . midnight shayari</p>
 
-        <div class="stats-pill-hub">
+        <div class="stats-pill">
           <div><span class="live-dot"></span> 41 Members Active</div>
           <div style="color: rgba(255,255,255,0.2);">•</div>
           <div>👥 131 Guild Members</div>
@@ -592,15 +563,14 @@
       </div>
     </div>
 
-    <!-- 1. गेमिंग स्क्वाड सेक्शन (100% ऑफिशियल वेक्टर लोगोज़) -->
+    <!-- 1. गेमिंग स्क्वाड सेक्शन -->
     <h2 class="section-title">🎮 . 𝐺𝐴𝑀𝐼𝑁𝐺 𝑆𝑄𝑈𝐴𝐷𝑆 . 🎮</h2>
     <div class="gaming-grid">
-
-      <!-- Free Fire: Official FF Emblem Badge -->
+      <!-- Free Fire -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="38" height="38">
+            <svg viewBox="0 0 100 100" width="34" height="34">
               <path d="M50 5 L88 22 L82 72 L50 95 L18 72 L12 22 Z" fill="#ff7a00" stroke="#ffd700" stroke-width="3"/>
               <path d="M50 15 L78 30 L50 78 L22 30 Z" fill="#11071c"/>
               <text x="50" y="55" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="900" text-anchor="middle">FF</text>
@@ -610,15 +580,15 @@
         </div>
         <div>
           <div class="game-title">Free Fire MAX</div>
-          <div class="game-desc">Daily CS rank push, guild wars & custom battles.</div>
+          <div class="game-desc">Daily CS rank push & guild wars.</div>
         </div>
       </a>
 
-      <!-- Roblox: Official 2022 Tilt Logo -->
+      <!-- Roblox -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="34" height="34">
+            <svg viewBox="0 0 100 100" width="30" height="30">
               <rect x="20" y="20" width="60" height="60" rx="12" transform="rotate(-15 50 50)" fill="#ffffff"/>
               <rect x="38" y="38" width="24" height="24" rx="4" transform="rotate(-15 50 50)" fill="#0d0614"/>
             </svg>
@@ -627,15 +597,15 @@
         </div>
         <div>
           <div class="game-title">Roblox</div>
-          <div class="game-desc">Blox Fruits trades, PvP showcases & fruit giveaways.</div>
+          <div class="game-desc">Blox Fruits & PvP showcases.</div>
         </div>
       </a>
 
-      <!-- GTA V: Official Roman V Logo -->
+      <!-- GTA V -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="38" height="38">
+            <svg viewBox="0 0 100 100" width="34" height="34">
               <path d="M22 15 L42 85 L58 85 L78 15 L62 15 L50 68 L38 15 Z" fill="#2d882d" stroke="#ffffff" stroke-width="2"/>
               <rect x="15" y="46" width="70" height="15" rx="3" fill="#ffffff"/>
               <text x="50" y="58" fill="#1b5e20" font-family="sans-serif" font-size="11" font-weight="900" text-anchor="middle" letter-spacing="1">FIVE</text>
@@ -645,34 +615,60 @@
         </div>
         <div>
           <div class="game-title">GTA V Online</div>
-          <div class="game-desc">Heist crews, car meets & multiplayer lobbies.</div>
+          <div class="game-desc">Heist crews & car meets.</div>
         </div>
       </a>
 
-      <!-- Minecraft: Official Isometric 3D Dirt/Grass Block -->
+      <!-- Minecraft -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-card audio-engine">
         <div class="game-top-bar">
           <div class="game-svg-frame">
-            <svg viewBox="0 0 100 100" width="38" height="38">
+            <svg viewBox="0 0 100 100" width="34" height="34">
               <polygon points="50,10 88,32 50,54 12,32" fill="#5b8731"/>
               <polygon points="12,32 50,54 50,92 12,70" fill="#866043"/>
               <polygon points="50,54 88,32 88,70 50,92" fill="#573d26"/>
-              <polygon points="12,32 50,54 50,60 12,38" fill="#4d7328"/>
-              <polygon points="50,54 88,32 88,38 50,60" fill="#3c5a1f"/>
             </svg>
           </div>
           <span class="game-action-tag">JOIN VC ➔</span>
         </div>
         <div>
           <div class="game-title">Minecraft SMP</div>
-          <div class="game-desc">Survival SMP, Bedwars squads & building realms.</div>
+          <div class="game-desc">Survival multiplayer & Bedwars.</div>
         </div>
       </a>
-
     </div>
 
-    <!-- 2. मेंबर्स सेक्शन (गेम्स के ठीक नीचे) -->
-    <h2 class="section-title">👥 . 𝑀𝐸𝑀𝐵𝐸𝑅𝑆 . 👥</h2>
-    <div class="members-hub">
-      <div class="members-hub-header">
-        <span class="members-hub-title">✦ 41 ACTIVE 
+    <!-- 2. DISCADIA STYLE MEMBER AVATAR BUBBLE CARD -->
+    <div class="discadia-members-card">
+      <div class="member-count-big">131</div>
+      <div class="member-status-sub">
+        <span class="live-dot"></span> 41 members online • Active Guild Roster
+      </div>
+
+      <!-- रंगीन डिस्कोर्ड अवतार बबल्स की कतार -->
+      <div class="avatar-bubble-row" id="bubble-container"></div>
+    </div>
+
+    <!-- 3. READ MORE BUTTON -->
+    <button class="read-more-trigger audio-engine" id="toggle-doc-btn">
+      <span>📖 Read Server Story & Rules</span>
+      <span id="arrow-icon">▼</span>
+    </button>
+
+    <!-- 4. इन-पेज एक्सपेंडेबल डिटेल्स बॉक्स (Italian Style Writing) -->
+    <div id="details-section">
+      <div class="doc-badge">🌸 𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 //</div>
+      
+      <div class="doc-quote">
+        “𝑁𝑜𝑡 𝑗𝑢𝑠𝑡 𝑎𝑛𝑜𝑡ℎ𝑒𝑟 𝑐𝑟𝑜𝑤𝑑𝑒𝑑 𝑠𝑒𝑟𝑣𝑒𝑟, 𝑏𝑢𝑡 𝑎 𝑟𝑒𝑎𝑙 𝑓𝑎𝑚𝑖𝑙𝑦 𝑤ℎ𝑒𝑟𝑒 𝑒𝑣𝑒𝑟𝑦 𝑠𝑜𝑢𝑙 ℎ𝑎𝑠 𝑎 𝑣𝑜𝑖𝑐𝑒.”
+      </div>
+
+      <p class="doc-p">
+        𝐿𝑜𝑜𝑘𝑖𝑛𝑔 𝑓𝑜𝑟 𝑎 𝑠𝑎𝑓𝑒 ℎ𝑎𝑣𝑒𝑛 𝑎𝑤𝑎𝑦 𝑓𝑟𝑜𝑚 𝑎𝑙𝑙 𝑡ℎ𝑒 𝑓𝑎𝑘𝑒 𝑒𝑛𝑒𝑟𝑔𝑦 𝑎𝑛𝑑 𝑡𝑜𝑥𝑖𝑐 𝑐𝑟𝑜𝑤𝑑𝑠? 𝑊𝑒𝑙𝑐𝑜𝑚𝑒 𝑡𝑜 <b>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒</b>—𝑎𝑛 𝑎𝑒𝑠𝑡ℎ𝑒𝑡𝑖𝑐 ℎ𝑜𝑚𝑒 𝑏𝑢𝑖𝑙𝑡 𝑓𝑜𝑟 𝑛𝑖𝑔ℎ𝑡 𝑜𝑤𝑙𝑠, 𝑝𝑎𝑠𝑠𝑖𝑜𝑛𝑎𝑡𝑒 𝑔𝑎𝑚𝑒𝑟𝑠, 𝑎𝑛𝑑 𝑑𝑒𝑒𝑝 𝑡ℎ𝑖𝑛𝑘𝑒𝑟𝑠. 𝑊𝑖𝑡ℎ 𝑎 𝑡𝑖𝑔ℎ𝑡𝑙𝑦-𝑘𝑛𝑖𝑡 𝑐𝑟𝑒𝑤 𝑜𝑓 <b>130+ 𝑔𝑒𝑛𝑢𝑖𝑛𝑒 𝑚𝑒𝑚𝑏𝑒𝑟𝑠</b>, 𝑛𝑜 𝑜𝑛𝑒 𝑠𝑡𝑎𝑦𝑠 𝑎 𝑠𝑡𝑟𝑎𝑛𝑔𝑒𝑟 ℎ𝑒𝑟𝑒 𝑓𝑜𝑟 𝑙𝑜𝑛𝑔.
+      </p>
+
+      <div class="doc-h2">✨ 𝑊ℎ𝑎𝑡 𝑊𝑒 𝑂𝑓𝑓𝑒𝑟</div>
+      <ul class="doc-ul">
+        <li>🔥 <b>𝐷𝑎𝑖𝑙𝑦 𝑅𝑎𝑛𝑘𝑒𝑑 𝐺𝑟𝑖𝑛𝑑𝑠:</b> 𝐴𝑐𝑡𝑖𝑣𝑒 𝑠𝑞𝑢𝑎𝑑𝑠 𝑓𝑜𝑟 𝐹𝑟𝑒𝑒 𝐹𝑖𝑟𝑒 𝐶𝑆 𝑟𝑎𝑛𝑘 𝑝𝑢𝑠ℎ, 𝑐𝑢𝑠𝑡𝑜𝑚 4𝑣4 𝑠ℎ𝑜𝑤𝑑𝑜𝑤𝑛𝑠, 𝑎𝑛𝑑 𝑠𝑒𝑟𝑖𝑜𝑢𝑠 𝑡𝑜𝑢𝑟𝑛𝑎𝑚𝑒𝑛𝑡 𝑣𝑖𝑏𝑒𝑠.</li>
+        <li>⚡ <b>𝑅𝑜𝑏𝑙𝑜𝑥 & 𝐵𝑙𝑜𝑥 𝐹𝑟𝑢𝑖𝑡𝑠:</b> 𝐹𝑟𝑢𝑖𝑡 𝑡𝑟𝑎𝑑𝑖𝑛𝑔, 𝑃𝑣𝑃 𝑏𝑜𝑢𝑛𝑡𝑦 ℎ𝑢𝑛𝑡𝑖𝑛𝑔, 𝑐𝑜𝑚𝑏𝑜 𝑡𝑒𝑠𝑡𝑖𝑛𝑔, 𝑎𝑛𝑑 𝑝𝑟𝑖𝑣𝑎𝑡𝑒 𝑠𝑒𝑟𝑣𝑒𝑟 𝑐ℎ𝑖𝑙𝑙𝑖𝑛𝑔.</li>
+        <li>🚗 <b>𝐺𝑇𝐴 𝑉 & 𝑀𝑖𝑛𝑒𝑐𝑟𝑎𝑓𝑡 𝑆𝑀𝑃:</b> 𝐿𝑎𝑡𝑒-𝑛𝑖?
