@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
   <title>𝐸 𝑐 𝑙 𝑖 𝑝 𝑠 𝑒 // Official Community Portal</title>
-  <meta name="description" content="Official Portal of Eclipse Community. Free Fire MAX, Roblox, GTA V, Minecraft SMP & aesthetic shayari.">
   <meta name="theme-color" content="#ff2a85">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +18,7 @@
       --accent: #00f0ff;
       --discord: #5865F2;
       --bg: #05020a;
-      --glass: rgba(18, 8, 30, 0.55);
+      --glass: rgba(18, 8, 30, 0.65);
       --glass-border: rgba(255, 255, 255, 0.12);
     }
 
@@ -35,26 +34,13 @@
       background-color: var(--bg);
       color: #ffffff;
       min-height: 100vh;
-      width: 100%;
+      width: 100vw;
       overflow-x: hidden;
-      padding: 12px 14px 60px;
+      padding: 8px 8px 60px;
       position: relative;
     }
 
-    /* एनिमे बैकग्राउंड आर्ट + डार्क ब्लेंड */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 50% 20%, rgba(255, 42, 133, 0.15), transparent 60%),
-                  radial-gradient(circle at 50% 80%, rgba(138, 43, 226, 0.2), transparent 70%),
-                  url('https://images.alphacoders.com/131/1314985.png') center/cover no-repeat;
-      opacity: 0.18;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    /* गिरते हुए एनिमे पार्टिकल्स (Anime Sakura / Sparkles) */
+    /* एनिमे फॉलिंग पार्टिकल्स */
     .particles-layer {
       position: fixed;
       inset: 0;
@@ -66,43 +52,33 @@
     .petal {
       position: absolute;
       top: -10%;
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(255, 42, 133, 0.4));
       border-radius: 12px 1px;
       filter: drop-shadow(0 0 6px rgba(255, 42, 133, 0.8));
       animation: animeFall linear infinite;
     }
 
-    .petal:nth-child(1) { left: 10%; width: 14px; height: 14px; animation-duration: 9s; animation-delay: 0s; }
-    .petal:nth-child(2) { left: 25%; width: 8px; height: 8px; animation-duration: 12s; animation-delay: 2s; }
-    .petal:nth-child(3) { left: 45%; width: 16px; height: 16px; animation-duration: 8s; animation-delay: 4s; }
-    .petal:nth-child(4) { left: 65%; width: 10px; height: 10px; animation-duration: 11s; animation-delay: 1s; }
-    .petal:nth-child(5) { left: 80%; width: 14px; height: 14px; animation-duration: 10s; animation-delay: 3s; }
-    .petal:nth-child(6) { left: 92%; width: 9px; height: 9px; animation-duration: 13s; animation-delay: 5s; }
+    .petal:nth-child(1) { left: 8%; width: 14px; height: 14px; animation-duration: 8s; animation-delay: 0s; }
+    .petal:nth-child(2) { left: 24%; width: 10px; height: 10px; animation-duration: 11s; animation-delay: 2s; }
+    .petal:nth-child(3) { left: 50%; width: 16px; height: 16px; animation-duration: 7s; animation-delay: 3s; }
+    .petal:nth-child(4) { left: 75%; width: 12px; height: 12px; animation-duration: 10s; animation-delay: 1s; }
+    .petal:nth-child(5) { left: 90%; width: 15px; height: 15px; animation-duration: 9s; animation-delay: 4s; }
 
     @keyframes animeFall {
-      0% {
-        top: -10%;
-        transform: translateX(0) rotate(0deg) scale(0.8);
-        opacity: 0;
-      }
-      10% { opacity: 0.9; }
-      90% { opacity: 0.9; }
-      100% {
-        top: 105%;
-        transform: translateX(80px) rotate(450deg) scale(1.1);
-        opacity: 0;
-      }
+      0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% { top: 105%; transform: translateX(70px) rotate(420deg); opacity: 0; }
     }
 
+    /* फुल-स्क्रीन कंटेनर (नो मार्जिन साइड्स) */
     .portal-container {
       width: 100%;
-      max-width: 540px;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     @keyframes rainbowShift {
@@ -115,21 +91,21 @@
       backdrop-filter: blur(25px);
       -webkit-backdrop-filter: blur(25px);
       border: 1px solid var(--glass-border);
-      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: all 0.2s ease;
+      width: 100%;
     }
 
     .interactive-card:active {
-      transform: scale(0.985);
+      transform: scale(0.99);
       border-color: #00f0ff;
       box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), 0 0 10px rgba(255, 42, 133, 0.6);
       animation: rainbowShift 1.2s linear infinite;
     }
 
-    /* Top Bar */
+    /* हेडर */
     header {
-      width: 100%;
-      padding: 12px 18px;
-      border-radius: 18px;
+      padding: 12px 16px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -146,28 +122,26 @@
     }
 
     .header-btn {
-      padding: 7px 16px;
+      padding: 8px 16px;
       background: linear-gradient(135deg, var(--discord), var(--primary));
       color: #fff;
       text-decoration: none;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 800;
       border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(255, 42, 133, 0.35);
     }
 
-    /* Hero Section */
+    /* फुल स्क्रीन हीरो कार्ड */
     .hero-card {
-      width: 100%;
-      border-radius: 26px;
+      border-radius: 22px;
       overflow: hidden;
       text-align: center;
-      padding-bottom: 22px;
+      padding-bottom: 20px;
     }
 
     .banner-container {
       width: 100%;
-      height: 220px;
+      height: 230px;
       position: relative;
       background: #000;
     }
@@ -186,10 +160,10 @@
     }
 
     .hero-avatar {
-      width: 86px;
-      height: 86px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
-      margin: -43px auto 10px;
+      margin: -45px auto 10px;
       position: relative;
       z-index: 2;
       padding: 3px;
@@ -211,7 +185,6 @@
       font-size: 32px;
       font-style: italic;
       font-weight: 800;
-      letter-spacing: 1.5px;
       background: linear-gradient(120deg, #ffffff, #ffb3d9, #e0aaff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -247,9 +220,8 @@
       margin-right: 4px;
     }
 
-    /* Full Width JOIN NOW */
     .join-now-master {
-      margin: 0 16px;
+      margin: 0 14px;
       padding: 16px;
       display: flex;
       align-items: center;
@@ -263,13 +235,6 @@
       font-weight: 900;
       letter-spacing: 1px;
       box-shadow: 0 8px 30px rgba(88, 101, 242, 0.55);
-      transition: all 0.2s ease;
-    }
-
-    .join-now-master:active {
-      transform: scale(0.97);
-      filter: hue-rotate(180deg);
-      box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
     }
 
     .join-now-master svg {
@@ -278,31 +243,31 @@
       fill: #ffffff;
     }
 
-    /* Gaming Squads */
+    /* गेमिंग स्क्वाड ग्रिड */
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 18px;
       font-style: italic;
       color: #ffb6c1;
       text-align: center;
-      margin: 4px 0 2px;
       letter-spacing: 1px;
     }
 
     .gaming-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 8px;
+      width: 100%;
     }
 
     .game-box {
-      border-radius: 18px;
-      padding: 14px;
+      border-radius: 16px;
+      padding: 14px 12px;
       text-decoration: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 110px;
+      min-height: 115px;
     }
 
     .game-box-top {
@@ -312,21 +277,22 @@
       margin-bottom: 8px;
     }
 
-    .game-logo-img {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+    .game-svg-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .game-badge {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
       color: var(--accent);
       background: rgba(0, 240, 255, 0.12);
       border: 1px solid rgba(0, 240, 255, 0.3);
-      padding: 3px 8px;
-      border-radius: 10px;
+      padding: 3px 6px;
+      border-radius: 8px;
     }
 
     .game-name {
@@ -342,10 +308,10 @@
       line-height: 1.3;
     }
 
-    /* Members Strip */
+    /* मेंबर्स स्ट्रिप (पूरी चौड़ाई में) */
     .members-strip-card {
-      border-radius: 20px;
-      padding: 16px 18px;
+      border-radius: 18px;
+      padding: 16px 14px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -380,6 +346,7 @@
       overflow-x: auto;
       padding-bottom: 4px;
       scrollbar-width: none;
+      width: 100%;
     }
 
     .single-line-members::-webkit-scrollbar {
@@ -396,7 +363,6 @@
       justify-content: center;
       position: relative;
       border: 1.5px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       flex-shrink: 0;
     }
 
@@ -417,39 +383,25 @@
       border: 2px solid #05020a;
     }
 
-    /* Owner & Server Details */
+    /* ओनर प्रोफाइल व सर्वर डिटेल्स */
     .owner-spotlight-card {
-      border-radius: 22px;
-      padding: 20px;
+      border-radius: 20px;
+      padding: 18px 16px;
       text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* कार्ड के अंदर बैकग्राउंड एनिमे ग्लॉस */
-    .owner-spotlight-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, rgba(255, 42, 133, 0.18), transparent 70%);
-      pointer-events: none;
     }
 
     .owner-header-bar {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 14px;
     }
 
     .owner-avatar-ring {
-      width: 60px;
-      height: 60px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       padding: 2px;
       background: linear-gradient(135deg, #ffd700, #ff2a85);
@@ -478,7 +430,7 @@
     }
 
     .owner-name-title {
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 800;
       color: #ffffff;
     }
@@ -536,9 +488,7 @@
 </head>
 <body>
 
-  <!-- बैकग्राउंड एनिमे फ्लोटिंग पार्टिकल्स -->
   <div class="particles-layer">
-    <div class="petal"></div>
     <div class="petal"></div>
     <div class="petal"></div>
     <div class="petal"></div>
@@ -582,50 +532,62 @@
       </a>
     </div>
 
-    <!-- 2. God-Level Gaming Squads -->
+    <!-- 2. God-Level Gaming Squads (Official Vector SVG Logos) -->
     <h2 class="section-title">🎮 . 𝐺𝐴𝑀𝐼𝑁𝐺 𝑆𝑄𝑈𝐴𝐷𝑆 . 🎮</h2>
     <div class="gaming-grid">
+      <!-- Free Fire -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-box interactive-card">
         <div class="game-box-top">
-          <img class="game-logo-img" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Free_Fire_MAX_logo.png/250px-Free_Fire_MAX_logo.png" onerror="this.src='https://assets.stickpng.com/images/5a36338b10e2082f64a75411.png'" alt="FF">
+          <div class="game-svg-icon" style="color: #ff4d00;">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-2v6.8c4.56-.93 8-4.96 8-9.8 0-5.52-4.48-10-10-10z"/></svg>
+          </div>
           <span class="game-badge">JOIN VC ➔</span>
         </div>
         <div>
           <div class="game-name">Free Fire MAX</div>
-          <div class="game-sub">Daily CS rank push & guild wars.</div>
+          <div class="game-sub">CS Rank push & guild wars.</div>
         </div>
       </a>
 
+      <!-- Roblox -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-box interactive-card">
         <div class="game-box-top">
-          <img class="game-logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Roblox_Logo_2022.svg/300px-Roblox_Logo_2022.svg.png" alt="Roblox">
+          <div class="game-svg-icon" style="color: #ffffff;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="3" transform="rotate(15 12 12)"/></svg>
+          </div>
           <span class="game-badge">JOIN VC ➔</span>
         </div>
         <div>
           <div class="game-name">Roblox</div>
-          <div class="game-sub">Blox Fruits & PvP bounty grind.</div>
+          <div class="game-sub">Blox Fruits & PvP grinding.</div>
         </div>
       </a>
 
+      <!-- GTA V -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-box interactive-card">
         <div class="game-box-top">
-          <img class="game-logo-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Grand_Theft_Auto_V_Logo.svg/300px-Grand_Theft_Auto_V_Logo.svg.png" alt="GTA V">
+          <div class="game-svg-icon" style="color: #00ff88; font-weight: 900; font-size: 19px; font-family: monospace;">
+            V
+          </div>
           <span class="game-badge">JOIN VC ➔</span>
         </div>
         <div>
           <div class="game-name">GTA V Online</div>
-          <div class="game-sub">Heist crews & underground meets.</div>
+          <div class="game-sub">Heist crews & car meets.</div>
         </div>
       </a>
 
+      <!-- Minecraft -->
       <a href="https://discord.gg/yAsXSvxdy" target="_blank" class="game-box interactive-card">
         <div class="game-box-top">
-          <img class="game-logo-img" src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft">
+          <div class="game-svg-icon" style="color: #55ff55;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 4h16v16H4V4zm2 2v4h4V6H6zm6 0v4h6V6h-6zm-6 6v6h6v-6H6zm8 0v6h4v-6h-4z"/></svg>
+          </div>
           <span class="game-badge">JOIN VC ➔</span>
         </div>
         <div>
           <div class="game-name">Minecraft SMP</div>
-          <div class="game-sub">Survival realm & Bedwars battles.</div>
+          <div class="game-sub">Survival multiplayer realm.</div>
         </div>
       </a>
     </div>
@@ -644,4 +606,13 @@
         <div class="member-dot-bubble" style="background:#ff2a85"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="online-indicator"></span></div>
         <div class="member-dot-bubble" style="background:#00f0ff"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="online-indicator"></span></div>
         <div class="member-dot-bubble" style="background:#8a2be2"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="online-indicator"></span></div>
-        <div class="member-dot-bubble" style=
+        <div class="member-dot-bubble" style="background:#ffd700"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="online-indicator"></span></div>
+        <div class="member-dot-bubble" style="background:#23a55a"><svg viewBox="0 0 127 96"><path d="M107 8A105 105 0 0 0 81 0a72 72 0 0 0-3 6 97 97 0 0 0-29 0 72 72 0 0 0-3-6 105 105 0 0 0-26 8C2 32-1 56 0 80a105 105 0 0 0 32 16 77 77 0 0 0 7-11 68 68 0 0 1-11-5c1 0 2-1 3-2a75 75 0 0 0 64 0c1 1 2 2 3 2-3 2-7 4-11 5a77 77 0 0 0 7 11 105 105 0 0 0 32-16c2-24-4-48-18-72zM42 65c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12zm42 0c-6 0-11-5-11-12s5-13 11-13 11 6 11 13-5 12-11 12z"/></svg><span class="online-indicator"></span></div>
+      </div>
+    </div>
+
+    <!-- 4. Owner & Server Details -->
+    <div class="owner-spotlight-card interactive-card">
+      <div class="owner-header-bar">
+        <div class="owner-avatar-ring">
+          <img src="logo.png" alt="O
