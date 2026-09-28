@@ -4,49 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Eclipse // Official Community</title>
+<title>Eclipse // Discord Community</title>
 
-<meta name="description" content="Eclipse // Official Discord Community">
+<meta name="description" content="Eclipse // Gaming & Community Discord Server">
 <meta name="theme-color" content="#050008">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700;1,800&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
-   ECLIPSE // VARIABLES
-========================================================= */
-
-:root{
-    --bg:#030107;
-    --bg2:#0b0014;
-
-    --pink:#ff2a85;
-    --pink-light:#ffb6d8;
-    --purple:#8a2be2;
-    --blue:#5865f2;
-    --cyan:#00eaff;
-
-    --white:#ffffff;
-    --muted:#afa2bc;
-    --card:rgba(17,6,29,.82);
-
-    --main-font:'Plus Jakarta Sans',sans-serif;
-    --eclipse-font:'Playfair Display',serif;
-}
-
-/* =========================================================
+/* =========================
    RESET
-========================================================= */
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    -webkit-tap-highlight-color:transparent;
 }
 
 html{
@@ -57,214 +29,71 @@ body{
     min-height:100vh;
     overflow-x:hidden;
 
-    color:var(--white);
+    color:#fff;
 
-    font-family:var(--main-font);
+    font-family:Arial,Helvetica,sans-serif;
 
     background:
         radial-gradient(
-            circle at 50% 10%,
-            rgba(138,43,226,.20),
-            transparent 34%
+            circle at 50% 0%,
+            rgba(145,0,190,.30),
+            transparent 35%
         ),
         radial-gradient(
             circle at 0% 45%,
-            rgba(255,42,133,.09),
-            transparent 28%
+            rgba(255,0,120,.14),
+            transparent 30%
         ),
         linear-gradient(
             180deg,
-            #09000f 0%,
-            #030107 80%
+            #100018 0%,
+            #050008 55%,
+            #020104 100%
         );
 }
 
-a{
-    -webkit-tap-highlight-color:transparent;
-}
-
-/* =========================================================
-   ANIME NIGHT BACKGROUND
-========================================================= */
-
-.anime-bg{
-    position:fixed;
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:-20;
-
-    background:
-        radial-gradient(
-            circle at 50% 25%,
-            rgba(255,42,133,.08),
-            transparent 36%
-        ),
-        linear-gradient(
-            180deg,
-            #09000f,
-            #100017 40%,
-            #030107 100%
-        );
-}
-
-/* Moon */
-
-.moon{
-    position:absolute;
-
-    top:100px;
-    right:10%;
-
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    background:#ffd9ea;
-
-    opacity:.82;
-
-    box-shadow:
-        0 0 30px rgba(255,180,220,.55),
-        0 0 90px rgba(255,42,133,.18);
-}
-
-.moon::after{
-    content:"";
-
-    position:absolute;
-
-    top:-8px;
-    left:25px;
-
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    background:#0b0013;
-}
-
-/* Glows */
-
-.glow{
-    position:absolute;
-
-    width:190px;
-    height:190px;
-
-    border-radius:50%;
-
-    filter:blur(65px);
-
-    opacity:.23;
-}
-
-.glow-one{
-    left:-90px;
-    top:25%;
-
-    background:#ff2a85;
-}
-
-.glow-two{
-    right:-90px;
-    top:55%;
-
-    background:#8a2be2;
-}
-
-/* =========================================================
-   FALLING SAKURA PETALS
-========================================================= */
+/* =========================
+   FALLING PETALS
+========================= */
 
 .petal{
     position:fixed;
+    top:-30px;
 
-    top:-40px;
-
-    width:13px;
-    height:8px;
+    width:12px;
+    height:7px;
 
     border-radius:100% 0 100% 0;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffe1ef,
-            #ff4b9b
-        );
+    background:linear-gradient(
+        135deg,
+        #ffd5e8,
+        #ff3f98
+    );
 
     box-shadow:
-        0 0 9px rgba(255,42,133,.65);
-
-    opacity:.85;
+        0 0 10px rgba(255,50,150,.7);
 
     pointer-events:none;
+    z-index:5;
 
-    z-index:-5;
-
-    animation:
-        fall linear infinite,
-        sway ease-in-out infinite;
+    animation:fall linear infinite;
 }
 
-.p1{
-    left:3%;
-    animation-duration:9s,3s;
-}
-
-.p2{
-    left:14%;
-    animation-duration:12s,3.5s;
-    animation-delay:2s;
-}
-
-.p3{
-    left:27%;
-    animation-duration:8s,2.7s;
-    animation-delay:4s;
-}
-
-.p4{
-    left:41%;
-    animation-duration:11s,3.2s;
-    animation-delay:1s;
-}
-
-.p5{
-    left:56%;
-    animation-duration:9s,2.8s;
-    animation-delay:3s;
-}
-
-.p6{
-    left:72%;
-    animation-duration:13s,3.5s;
-    animation-delay:1s;
-}
-
-.p7{
-    left:87%;
-    animation-duration:10s,2.9s;
-    animation-delay:5s;
-}
-
-.p8{
-    left:96%;
-    animation-duration:14s,3.4s;
-    animation-delay:2s;
-}
+.p1{left:5%;animation-duration:8s;}
+.p2{left:17%;animation-duration:11s;animation-delay:2s;}
+.p3{left:30%;animation-duration:9s;animation-delay:4s;}
+.p4{left:44%;animation-duration:12s;animation-delay:1s;}
+.p5{left:58%;animation-duration:8s;animation-delay:3s;}
+.p6{left:72%;animation-duration:10s;animation-delay:1s;}
+.p7{left:87%;animation-duration:13s;animation-delay:5s;}
+.p8{left:96%;animation-duration:9s;animation-delay:2s;}
 
 @keyframes fall{
 
     0%{
         transform:
-            translateY(-60px)
+            translateY(-50px)
             rotate(0deg);
 
         opacity:0;
@@ -280,33 +109,46 @@ a{
 
     100%{
         transform:
-            translateY(115vh)
-            rotate(520deg);
+            translateY(110vh)
+            translateX(50px)
+            rotate(500deg);
 
         opacity:0;
     }
 }
 
-@keyframes sway{
+/* =========================
+   BACKGROUND GLOW
+========================= */
 
-    0%,100%{
-        margin-left:-15px;
-    }
+.bg-glow{
+    position:fixed;
+    inset:0;
 
-    50%{
-        margin-left:25px;
-    }
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(255,0,140,.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 100% 55%,
+            rgba(100,0,255,.12),
+            transparent 25%
+        );
 }
 
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header{
     position:sticky;
     top:0;
-
-    z-index:100;
+    z-index:50;
 
     width:100%;
 
@@ -314,142 +156,129 @@ header{
     align-items:center;
     justify-content:space-between;
 
-    padding:14px 18px;
+    padding:13px 16px;
 
-    background:
-        rgba(5,1,10,.82);
+    background:rgba(5,0,10,.88);
 
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    backdrop-filter:blur(15px);
 
-    border-bottom:
-        1px solid rgba(255,255,255,.07);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .brand{
-    color:white;
+    font-family:Georgia,serif;
 
-    font-family:var(--eclipse-font);
-
-    font-size:23px;
-
-    font-weight:800;
+    font-size:22px;
     font-style:italic;
+    font-weight:bold;
 
-    letter-spacing:2px;
+    color:#ffd4e8;
 
     text-shadow:
-        0 0 18px rgba(255,42,133,.45);
+        0 0 15px rgba(255,0,130,.45);
 }
 
-.header-join{
-    padding:9px 15px;
+.header-btn{
+    display:inline-block;
 
-    border-radius:22px;
+    padding:8px 13px;
 
-    color:white;
-
-    text-decoration:none;
-
-    font-size:10px;
-    font-weight:900;
+    border-radius:20px;
 
     background:
         linear-gradient(
             135deg,
-            var(--blue),
-            var(--pink)
+            #5865f2,
+            #ff1982
         );
 
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:9px;
+    font-weight:900;
+
     box-shadow:
-        0 5px 18px rgba(255,42,133,.25);
+        0 5px 18px rgba(255,0,130,.25);
 }
 
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
+/* =========================
+   MAIN
+========================= */
 
-.container{
+main{
+    position:relative;
+    z-index:10;
+
     width:100%;
-    max-width:1150px;
-
-    margin:0 auto;
 }
 
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero{
     width:100%;
 
     text-align:center;
 
-    padding-bottom:20px;
+    padding-bottom:25px;
 }
 
-/* SMALL SERVER BANNER */
+/* YOUR BANNER */
 
-.server-banner{
+.banner{
     position:relative;
 
     width:100%;
-
-    height:130px;
+    height:125px;
 
     overflow:hidden;
 
-    background:#000;
+    background:#08000d;
 }
 
-.server-banner img{
-    display:block;
-
+.banner img{
     width:100%;
     height:100%;
+
+    display:block;
 
     object-fit:cover;
     object-position:center;
 
     filter:
-        brightness(.58)
-        saturate(.88);
+        brightness(.62)
+        saturate(.9);
 }
 
-.server-banner::after{
+.banner::after{
     content:"";
 
     position:absolute;
-
     inset:0;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(3,1,7,.08),
-            rgba(3,1,7,.96)
+            transparent 15%,
+            rgba(8,0,13,.95) 100%
         );
 }
 
-/* HERO CONTENT */
+/* =========================
+   LOGO
+========================= */
 
-.hero-content{
+.logo-wrap{
     position:relative;
+    z-index:3;
 
-    z-index:2;
+    width:86px;
+    height:86px;
 
-    margin-top:-39px;
-
-    padding:0 15px;
-}
-
-/* LOGO */
-
-.server-logo{
-    width:88px;
-    height:88px;
-
-    margin:auto;
+    margin:-36px auto 0;
 
     padding:3px;
 
@@ -458,131 +287,124 @@ header{
     background:
         linear-gradient(
             135deg,
-            var(--pink),
-            var(--purple),
-            var(--cyan)
+            #ff1680,
+            #8a2be2,
+            #00d9ff
         );
 
     box-shadow:
-        0 0 25px rgba(255,42,133,.58);
+        0 0 28px rgba(255,20,130,.55);
 }
 
-.server-logo img{
-    display:block;
-
+.logo-wrap img{
     width:100%;
     height:100%;
 
-    border-radius:50%;
+    display:block;
 
     object-fit:cover;
+
+    border-radius:50%;
 
     background:#000;
 }
 
-/* SERVER NAME */
+/* =========================
+   HERO TEXT
+========================= */
 
 .server-name{
-    margin-top:10px;
+    margin-top:12px;
 
-    color:#ffd5e8;
+    font-family:Georgia,serif;
 
-    font-family:var(--eclipse-font);
+    font-size:44px;
 
-    font-size:
-        clamp(40px,10vw,68px);
+    line-height:1;
 
-    font-weight:800;
     font-style:italic;
 
-    line-height:1.05;
+    letter-spacing:2px;
 
-    letter-spacing:3px;
+    color:#ffd8e9;
 
     text-shadow:
-        0 0 22px rgba(255,42,133,.35);
+        0 0 25px rgba(255,30,140,.35);
 }
 
-/* TAGLINE */
-
 .tagline{
-    margin-top:5px;
+    margin-top:7px;
 
-    color:#d1c0dd;
+    color:#cdbbd7;
 
-    font-family:var(--eclipse-font);
+    font-family:Georgia,serif;
 
-    font-size:13px;
+    font-size:11px;
 
     font-style:italic;
 }
 
-/* STATS */
+/* =========================
+   STATS
+========================= */
 
 .stats{
     display:inline-flex;
 
-    align-items:center;
-
     gap:12px;
+
+    align-items:center;
 
     margin-top:14px;
 
-    padding:8px 15px;
+    padding:8px 14px;
 
-    border-radius:25px;
+    border-radius:20px;
 
-    color:#eee;
+    background:rgba(255,255,255,.05);
 
-    background:
-        rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
 
-    border:
-        1px solid rgba(255,255,255,.10);
-
-    backdrop-filter:blur(10px);
-
-    font-size:11px;
-    font-weight:700;
+    font-size:10px;
+    font-weight:bold;
 }
 
-.online-dot{
-    display:inline-block;
-
+.online{
     width:7px;
     height:7px;
+
+    display:inline-block;
 
     margin-right:4px;
 
     border-radius:50%;
 
-    background:#23d879;
+    background:#20df76;
 
-    box-shadow:
-        0 0 9px #23d879;
+    box-shadow:0 0 9px #20df76;
 }
 
-/* =========================================================
-   MAIN DISCORD BUTTON
-========================================================= */
+/* =========================
+   JOIN BUTTON
+========================= */
 
-.main-join{
+.join-btn{
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    gap:11px;
+    width:92%;
 
-    width:min(92%,560px);
+    max-width:550px;
 
-    margin:21px auto 0;
+    margin:20px auto 0;
 
-    padding:16px 20px;
+    padding:16px;
 
-    border-radius:17px;
+    border-radius:16px;
 
-    color:white !important;
+    color:#fff;
 
     text-decoration:none;
 
@@ -590,39 +412,28 @@ header{
         linear-gradient(
             135deg,
             #5865f2,
-            #8a2be2,
-            #ff1681
+            #782cff,
+            #ff1680
         );
 
     font-size:15px;
     font-weight:900;
 
-    letter-spacing:.8px;
+    letter-spacing:.5px;
 
     box-shadow:
-        0 10px 32px rgba(255,42,133,.27),
-        0 5px 22px rgba(88,101,242,.20);
+        0 10px 35px rgba(255,20,130,.25);
 
-    transition:.2s ease;
+    transition:.2s;
 }
 
-.main-join:hover{
+.join-btn:hover{
     transform:translateY(-2px);
-
-    box-shadow:
-        0 14px 40px rgba(255,42,133,.40);
 }
 
-.discord-icon{
-    width:24px;
-    height:24px;
-
-    fill:white;
-}
-
-/* =========================================================
-   SECTION TITLES
-========================================================= */
+/* =========================
+   SECTIONS
+========================= */
 
 .section-title{
     display:flex;
@@ -630,21 +441,17 @@ header{
     align-items:center;
     justify-content:center;
 
-    gap:12px;
+    gap:10px;
 
-    margin:
-        28px 16px 18px;
+    margin:28px 14px 17px;
 
-    color:#ffb9da;
+    color:#ffb8d9;
 
-    font-family:var(--eclipse-font);
+    font-family:Georgia,serif;
 
-    font-size:23px;
+    font-size:22px;
 
-    font-weight:700;
     font-style:italic;
-
-    letter-spacing:1px;
 
     text-align:center;
 }
@@ -657,13 +464,13 @@ header{
 
     flex:1;
 
-    max-width:150px;
+    max-width:120px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,42,133,.65)
+            #ff2a85
         );
 }
 
@@ -671,64 +478,62 @@ header{
     background:
         linear-gradient(
             90deg,
-            rgba(255,42,133,.65),
+            #ff2a85,
             transparent
         );
 }
 
-/* =========================================================
-   GAMING SQUADS
-========================================================= */
+/* =========================
+   GAMING CARDS
+========================= */
 
 .games{
+    width:100%;
+
     display:grid;
 
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
+    grid-template-columns:1fr 1fr;
 
-    gap:13px;
+    gap:11px;
 
-    padding:0 14px;
+    padding:0 12px;
 }
 
 .game{
+    display:block;
+
     min-height:145px;
 
-    padding:14px;
+    padding:13px;
 
-    border-radius:18px;
-
-    color:white;
+    color:#fff;
 
     text-decoration:none;
+
+    border-radius:18px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(19,7,32,.94),
-            rgba(5,2,11,.86)
+            rgba(25,7,40,.95),
+            rgba(7,2,13,.90)
         );
 
-    border:
-        1px solid rgba(255,42,133,.18);
+    border:1px solid rgba(255,40,140,.20);
 
     box-shadow:
         inset 0 1px rgba(255,255,255,.03);
 
-    transition:
-        transform .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
+    transition:.2s;
 }
 
 .game:hover{
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
-    border-color:
-        rgba(255,42,133,.58);
+    border-color:#ff3b98;
 
     box-shadow:
-        0 12px 35px rgba(255,42,133,.14);
+        0 10px 30px rgba(255,30,130,.15);
 }
 
 .game-top{
@@ -739,165 +544,140 @@ header{
 }
 
 .game-logo{
-    width:52px;
-    height:52px;
+    width:50px;
+    height:50px;
 
     overflow:hidden;
 
-    border-radius:13px;
+    border-radius:12px;
 
-    background:#05030a;
+    background:#000;
 
-    border:
-        1px solid rgba(255,255,255,.14);
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.5);
+    border:1px solid rgba(255,255,255,.14);
 }
 
 .game-logo img{
-    display:block;
-
     width:100%;
     height:100%;
 
     object-fit:cover;
+
+    display:block;
 }
 
 .vc{
-    padding:5px 8px;
+    padding:5px 7px;
 
-    border-radius:12px;
+    border-radius:10px;
 
-    color:var(--cyan);
+    color:#00eaff;
 
-    background:
-        rgba(0,234,255,.07);
+    background:rgba(0,234,255,.07);
 
-    border:
-        1px solid rgba(0,234,255,.25);
+    border:1px solid rgba(0,234,255,.25);
 
-    font-size:8px;
+    font-size:7px;
     font-weight:900;
 }
 
-.game-info{
-    margin-top:16px;
-}
-
 .game-name{
-    color:#fff;
+    margin-top:16px;
 
-    font-family:var(--eclipse-font);
+    font-family:Georgia,serif;
 
-    font-size:18px;
+    font-size:17px;
 
-    font-weight:800;
     font-style:italic;
+    font-weight:bold;
 }
 
 .game-desc{
     margin-top:4px;
 
-    color:#a99bb8;
+    color:#a99aae;
 
-    font-size:10px;
+    font-size:9px;
 
     line-height:1.5;
 }
 
-/* =========================================================
+/* =========================
    COMMUNITY
-========================================================= */
+========================= */
 
 .community{
-    margin:0 14px;
+    margin:0 12px;
 
-    padding:21px 19px;
+    padding:21px 18px;
 
     border-radius:20px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(15,5,27,.90),
-            rgba(4,1,9,.80)
+            rgba(22,6,37,.92),
+            rgba(5,1,10,.90)
         );
 
-    border:
-        1px solid rgba(255,42,133,.17);
+    border:1px solid rgba(255,40,140,.18);
 }
 
 .community-top{
     display:flex;
 
-    align-items:flex-start;
     justify-content:space-between;
 }
 
-.member-number{
-    color:white;
-
+.number{
     font-size:35px;
-
     font-weight:900;
 }
 
-.member-label{
-    margin-top:3px;
+.label{
+    margin-top:2px;
 
-    color:#9d91a9;
+    color:#9b8da5;
 
-    font-size:9px;
+    font-size:8px;
 
     letter-spacing:1px;
 }
 
-.online-now{
-    color:#28e77e;
+.online-text{
+    color:#29df79;
 
-    font-size:11px;
+    font-size:10px;
 
     font-weight:900;
 
     text-align:right;
 }
 
-.online-now small{
+.online-text small{
     display:block;
 
     margin-top:4px;
 
-    color:#438d68;
+    color:#4c8b68;
 
-    font-size:8px;
+    font-size:7px;
 }
-
-/* AVATARS */
 
 .avatars{
     display:flex;
 
     gap:8px;
 
-    overflow-x:auto;
-
     margin-top:18px;
 
-    padding-bottom:2px;
-
-    scrollbar-width:none;
-}
-
-.avatars::-webkit-scrollbar{
-    display:none;
+    overflow:hidden;
 }
 
 .avatar{
     flex:0 0 auto;
 
-    width:40px;
-    height:40px;
+    width:39px;
+    height:39px;
 
     display:flex;
 
@@ -906,68 +686,56 @@ header{
 
     border-radius:50%;
 
-    border:
-        2px solid rgba(255,255,255,.16);
+    border:2px solid rgba(255,255,255,.15);
 
-    box-shadow:
-        0 4px 14px rgba(0,0,0,.5);
-
-    font-size:15px;
+    font-size:14px;
 }
 
-.a1{background:#5865f2;}
-.a2{background:#ff2a85;}
-.a3{background:#00a9c5;}
-.a4{background:#8a2be2;}
-.a5{background:#ff6b9f;}
-.a6{background:#e84747;}
-.a7{background:#d99500;}
-.a8{background:#23a55a;}
+.av1{background:#5865f2;}
+.av2{background:#ff2a85;}
+.av3{background:#00a9c5;}
+.av4{background:#8a2be2;}
+.av5{background:#ff609c;}
+.av6{background:#e84646;}
+.av7{background:#c99400;}
+.av8{background:#23a55a;}
 
-.avatar.more{
-    color:#ddd;
-
-    background:
-        rgba(255,255,255,.06);
-
-    font-size:20px;
+.more{
+    background:rgba(255,255,255,.06);
 }
 
-/* =========================================================
-   ABOUT / OWNER
-========================================================= */
+/* =========================
+   ABOUT
+========================= */
 
-.owner{
-    margin:0 14px;
+.about-box{
+    margin:0 12px;
 
-    padding:23px 19px 27px;
+    padding:22px 18px 25px;
 
-    border-radius:21px;
+    border-radius:20px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(20,7,34,.92),
-            rgba(3,1,7,.93)
+            rgba(22,6,37,.94),
+            rgba(4,1,9,.94)
         );
 
-    border:
-        1px solid rgba(255,42,133,.18);
+    border:1px solid rgba(255,40,140,.18);
 }
 
-.owner-head{
+.owner{
     display:flex;
 
     align-items:center;
 
-    gap:14px;
+    gap:13px;
 }
 
-.owner-avatar{
-    width:67px;
-    height:67px;
-
-    flex:0 0 auto;
+.owner-logo{
+    width:65px;
+    height:65px;
 
     padding:3px;
 
@@ -977,273 +745,165 @@ header{
         linear-gradient(
             135deg,
             #ffd700,
-            #ff2a85
+            #ff1680
         );
-
-    box-shadow:
-        0 0 20px rgba(255,215,0,.30);
 }
 
-.owner-avatar img{
-    display:block;
-
+.owner-logo img{
     width:100%;
     height:100%;
 
     border-radius:50%;
 
     object-fit:cover;
+
+    display:block;
 }
 
-.owner-badge{
+.badge{
     display:inline-block;
-
-    margin-bottom:5px;
 
     padding:4px 8px;
 
-    border-radius:7px;
+    margin-bottom:5px;
+
+    border-radius:6px;
 
     color:#ffd700;
 
-    background:
-        rgba(255,215,0,.08);
+    background:rgba(255,215,0,.08);
 
-    border:
-        1px solid rgba(255,215,0,.27);
+    border:1px solid rgba(255,215,0,.25);
 
-    font-size:8px;
-
+    font-size:7px;
     font-weight:900;
-
-    letter-spacing:1px;
 }
 
 .owner-name{
-    color:white;
-
-    font-size:23px;
-
+    font-size:22px;
     font-weight:900;
-
-    letter-spacing:1px;
 }
 
 .quote{
     margin-top:18px;
 
-    padding-left:13px;
+    padding-left:12px;
 
-    border-left:
-        3px solid var(--pink);
+    border-left:3px solid #ff2a85;
 
-    color:#ffb4d6;
+    color:#ffafd3;
 
-    font-family:var(--eclipse-font);
+    font-family:Georgia,serif;
 
-    font-size:15px;
+    font-size:14px;
 
     font-style:italic;
 
     line-height:1.6;
 }
 
-.about-title,
-.rules-title{
-    margin-top:23px;
-    margin-bottom:9px;
+.about-title{
+    margin-top:22px;
+    margin-bottom:8px;
 
-    color:white;
-
-    font-size:18px;
-
+    font-size:17px;
     font-weight:900;
 }
 
-.about{
-    color:#d0c3dc;
+.about-text{
+    color:#cfc1d9;
 
-    font-size:12px;
+    font-size:11px;
 
     line-height:1.75;
 }
 
-/* RULES */
+/* =========================
+   RULES
+========================= */
+
+.rules-title{
+    margin-top:22px;
+    margin-bottom:10px;
+
+    font-size:17px;
+    font-weight:900;
+}
 
 .rules{
-    display:flex;
+    list-style:none;
 
+    display:flex;
     flex-direction:column;
 
     gap:9px;
-
-    list-style:none;
 }
 
 .rules li{
-    padding-bottom:9px;
+    padding-bottom:8px;
 
-    color:#c9bcd5;
+    color:#c5b7d0;
 
-    border-bottom:
-        1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
 
-    font-size:11px;
+    font-size:10px;
 
-    line-height:1.6;
+    line-height:1.5;
 }
 
 .rules b{
-    color:white;
+    color:#fff;
 }
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer{
-    padding:
-        30px 20px 42px;
+    padding:30px 15px 45px;
 
-    color:#766b81;
+    color:#766b80;
 
     text-align:center;
 
     font-size:9px;
-
-    line-height:1.7;
 }
 
 .footer-name{
-    margin-bottom:4px;
+    margin-bottom:5px;
 
-    color:#ff9dca;
+    color:#ff9dcc;
 
-    font-family:var(--eclipse-font);
+    font-family:Georgia,serif;
 
     font-size:18px;
 
     font-style:italic;
 }
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:600px){
-
-    header{
-        padding:13px 15px;
-    }
-
-    .brand{
-        font-size:21px;
-    }
-
-    .header-join{
-        padding:8px 12px;
-
-        font-size:9px;
-    }
-
-    .server-banner{
-        height:125px;
-    }
-
-    .server-logo{
-        width:85px;
-        height:85px;
-    }
-
-    .hero-content{
-        margin-top:-35px;
-    }
-
-    .server-name{
-        font-size:42px;
-
-        letter-spacing:2px;
-    }
-
-    .tagline{
-        font-size:11px;
-    }
-
-    .main-join{
-        width:92%;
-
-        padding:15px;
-
-        font-size:14px;
-    }
-
-    .section-title{
-        margin-top:27px;
-
-        font-size:21px;
-    }
-
-    .games{
-        gap:10px;
-
-        padding:0 12px;
-    }
-
-    .game{
-        min-height:138px;
-
-        padding:12px;
-    }
-
-    .game-logo{
-        width:48px;
-        height:48px;
-    }
-
-    .game-name{
-        font-size:16px;
-    }
-
-    .game-desc{
-        font-size:9px;
-    }
-
-    .community,
-    .owner{
-        margin-left:12px;
-        margin-right:12px;
-    }
-}
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media(max-width:380px){
 
-    .server-banner{
+    .banner{
         height:115px;
     }
 
-    .server-logo{
+    .logo-wrap{
         width:80px;
         height:80px;
+
+        margin-top:-33px;
     }
 
     .server-name{
-        font-size:36px;
+        font-size:37px;
     }
 
     .tagline{
-        font-size:10px;
-    }
-
-    .stats{
         font-size:9px;
-
-        gap:8px;
-
-        padding:7px 11px;
     }
 
     .games{
@@ -1251,9 +911,8 @@ footer{
     }
 
     .game{
-        min-height:132px;
-
         padding:10px;
+        min-height:135px;
     }
 
     .game-logo{
@@ -1261,34 +920,12 @@ footer{
         height:45px;
     }
 
-    .vc{
-        padding:4px 6px;
-
-        font-size:7px;
-    }
-
     .game-name{
         font-size:15px;
     }
-}
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    html{
-        scroll-behavior:auto;
-    }
-
-    .petal{
-        display:none;
-    }
-
-    .game,
-    .main-join{
-        transition:none;
+    .game-desc{
+        font-size:8px;
     }
 }
 
@@ -1298,23 +935,10 @@ footer{
 
 <body>
 
-<!-- =====================================================
-     ANIME BACKGROUND
-===================================================== -->
-
-<div class="anime-bg">
-
-    <div class="moon"></div>
-
-    <div class="glow glow-one"></div>
-
-    <div class="glow glow-two"></div>
-
-</div>
-
+<!-- BACKGROUND -->
+<div class="bg-glow"></div>
 
 <!-- FALLING PETALS -->
-
 <div class="petal p1"></div>
 <div class="petal p2"></div>
 <div class="petal p3"></div>
@@ -1325,9 +949,9 @@ footer{
 <div class="petal p8"></div>
 
 
-<!-- =====================================================
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header>
 
@@ -1336,7 +960,7 @@ footer{
     </div>
 
     <a
-        class="header-join"
+        class="header-btn"
         href="https://discord.gg/yAsXSvxdy"
         target="_blank"
         rel="noopener"
@@ -1347,35 +971,316 @@ footer{
 </header>
 
 
-<div class="container">
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
 
 
-<!-- =====================================================
+<!-- =========================
      HERO
-===================================================== -->
+========================= -->
 
 <section class="hero">
 
-
     <!-- YOUR EXISTING BANNER -->
-
-    <div class="server-banner">
+    <div class="banner">
 
         <img
             src="banner.gif"
-            alt="Eclipse Server Banner"
-            onerror="this.src='banner.jpg'"
+            alt="Eclipse Banner"
         >
 
     </div>
 
 
-    <div class="hero-content">
+    <!-- YOUR EXISTING LOGO -->
+    <div class="logo-wrap">
+
+        <img
+            src="logo.png"
+            alt="Eclipse Logo"
+        >
+
+    </div>
 
 
-        <!-- YOUR EXISTING LOGO -->
+    <h1 class="server-name">
+        Eclipse //
+    </h1>
 
-        <div class="server-logo">
+
+    <p class="tagline">
+        active chat · gaming squads · midnight shayari
+    </p>
+
+
+    <div class="stats">
+
+        <span>
+            <span class="online"></span>
+            41 Active
+        </span>
+
+        <span>
+            •
+        </span>
+
+        <span>
+            👥 131 Members
+        </span>
+
+    </div>
+
+
+    <!-- YOUR DISCORD SERVER -->
+    <a
+        class="join-btn"
+        href="https://discord.gg/yAsXSvxdy"
+        target="_blank"
+        rel="noopener"
+    >
+        💬 JOIN DISCORD SERVER
+    </a>
+
+</section>
+
+
+<!-- =========================
+     GAMING SQUADS
+========================= -->
+
+<h2 class="section-title">
+    🎮 GAMING SQUADS 🎮
+</h2>
+
+
+<div class="games">
+
+
+    <!-- FREE FIRE -->
+
+    <a
+        class="game"
+        href="https://discord.gg/yAsXSvxdy"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <div class="game-top">
+
+            <div class="game-logo">
+
+                <img
+                    src="ff.jpg"
+                    alt="Free Fire"
+                >
+
+            </div>
+
+            <span class="vc">
+                JOIN VC →
+            </span>
+
+        </div>
+
+        <div class="game-name">
+            Free Fire MAX
+        </div>
+
+        <div class="game-desc">
+            CS Rank push & gaming squads.
+        </div>
+
+    </a>
+
+
+    <!-- ROBLOX -->
+
+    <a
+        class="game"
+        href="https://discord.gg/yAsXSvxdy"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <div class="game-top">
+
+            <div class="game-logo">
+
+                <img
+                    src="roblox.jpg"
+                    alt="Roblox"
+                >
+
+            </div>
+
+            <span class="vc">
+                JOIN VC →
+            </span>
+
+        </div>
+
+        <div class="game-name">
+            Roblox
+        </div>
+
+        <div class="game-desc">
+            Blox Fruits & bounty grinding.
+        </div>
+
+    </a>
+
+
+    <!-- GTA -->
+
+    <a
+        class="game"
+        href="https://discord.gg/yAsXSvxdy"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <div class="game-top">
+
+            <div class="game-logo">
+
+                <img
+                    src="gta.jpg"
+                    alt="GTA V"
+                >
+
+            </div>
+
+            <span class="vc">
+                JOIN VC →
+            </span>
+
+        </div>
+
+        <div class="game-name">
+            GTA V Online
+        </div>
+
+        <div class="game-desc">
+            Heists, crews & online sessions.
+        </div>
+
+    </a>
+
+
+    <!-- MINECRAFT -->
+
+    <a
+        class="game"
+        href="https://discord.gg/yAsXSvxdy"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <div class="game-top">
+
+            <div class="game-logo">
+
+                <img
+                    src="mc.jpg"
+                    alt="Minecraft"
+                >
+
+            </div>
+
+            <span class="vc">
+                JOIN VC →
+            </span>
+
+        </div>
+
+        <div class="game-name">
+            Minecraft SMP
+        </div>
+
+        <div class="game-desc">
+            Survival, builds & multiplayer.
+        </div>
+
+    </a>
+
+</div>
+
+
+<!-- =========================
+     COMMUNITY
+========================= -->
+
+<h2 class="section-title">
+    ✦ THE COMMUNITY ✦
+</h2>
+
+
+<section class="community">
+
+    <div class="community-top">
+
+        <div>
+
+            <div class="number">
+                131
+            </div>
+
+            <div class="label">
+                TOTAL MEMBERS
+            </div>
+
+        </div>
+
+
+        <div class="online-text">
+
+            ● 41 ONLINE
+
+            <small>
+                RIGHT NOW
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <div class="avatars">
+
+        <div class="avatar av1">☁</div>
+        <div class="avatar av2">✦</div>
+        <div class="avatar av3">✧</div>
+        <div class="avatar av4">☾</div>
+        <div class="avatar av5">★</div>
+        <div class="avatar av6">♢</div>
+        <div class="avatar av7">✦</div>
+        <div class="avatar av8">☁</div>
+        <div class="avatar more">+</div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<h2 class="section-title">
+    ✦ ABOUT ECLIPSE ✦
+</h2>
+
+
+<section class="about-box">
+
+
+    <div class="owner">
+
+
+        <div class="owner-logo">
 
             <img
                 src="logo.png"
@@ -1385,10 +1290,92 @@ footer{
         </div>
 
 
-        <h1 class="server-name">
-            Eclipse //
-        </h1>
+        <div>
+
+            <div class="badge">
+                SERVER OWNER
+            </div>
+
+            <div class="owner-name">
+                AYUSH
+            </div>
+
+        </div>
 
 
-        <p class="tagline">
-            active chat · gaming squads · midnight shaya
+    </div>
+
+
+    <div class="quote">
+        "A place where gaming meets
+        late-night conversations."
+    </div>
+
+
+    <div class="about-title">
+        Our Community
+    </div>
+
+
+    <p class="about-text">
+
+        Eclipse is a chill gaming community
+        made for gamers, friends and late-night
+        conversations.
+
+        Play Free Fire, Roblox, GTA V,
+        Minecraft or simply hang out and
+        enjoy the community.
+
+    </p>
+
+
+    <div class="rules-title">
+        Community Rules
+    </div>
+
+
+    <ul class="rules">
+
+        <li>
+            <b>01. Respect everyone.</b>
+            Keep the community friendly.
+        </li>
+
+        <li>
+            <b>02. No unnecessary toxicity.</b>
+            Don't ruin other people's experience.
+        </li>
+
+        <li>
+            <b>03. No cheating or hacks.</b>
+            Keep gaming fair.
+        </li>
+
+        <li>
+            <b>04. No spam.</b>
+            Avoid message and mic spam.
+        </li>
+
+        <li>
+            <b>05. No hate or harassment.</b>
+            Treat everyone with respect.
+        </li>
+
+        <li>
+            <b>06. Have fun.</b>
+            Keep Eclipse chill.
+        </li>
+
+    </ul>
+
+
+    <!-- SECOND JOIN BUTTON -->
+
+    <a
+        class="join-btn"
+        href="https://discord.gg/yAsXSvxdy"
+        target="_blank"
+        rel="noopener"
+    >
+        💜
